@@ -1,0 +1,128 @@
+<div class="container">
+    <div >
+        <form [formGroup]="adminForm">
+            <nz-collapse >
+                <nz-collapse-panel nzHeader="Super Admin Registration" nzActive="true">
+                    <h1>Super Admin Registration Page</h1>
+                    <div class="inner-box form-group">
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Firstname</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="text" placeholder="Enter First Name" formControlName="firstName"
+                                    minlength="0" maxlength="25">
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Middlename</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="text" placeholder="Enter Middle Name" formControlName="middleName"
+                                    minlength="0" maxlength="25">
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Lastname</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="text" placeholder="Enter Last Name" formControlName="lastName"
+                                    minlength="0" maxlength="25">
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Contact Number</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="tel" placeholder="Enter Contact Number"
+                                    formControlName="contactNo" minlength="0" maxlength="10">
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Email</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="email" placeholder="Enter Email ID " formControlName="email"
+                                    minlength="0" maxlength="35">
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Create Password</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="password" placeholder="Create Password" formControlName="password"
+                                    minlength="8" maxlength="25">
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Create Password</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="password" placeholder="Confirm Password"
+                                    formControlName="confpass" minlength="8" maxlength="25">
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-button-group>
+                                    <button nz-button nzType="primary" (click)="onSignup()">Add </button>
+                                </nz-button-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </nz-collapse-panel>
+            </nz-collapse>
+        </form>
+    </div>
+
+    <div>
+        <form >
+            <nz-collapse>
+                <nz-collapse-panel nzHeader="Super Admin Login" nzActive="true">
+                    <div class="inner-box form-control">
+
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Email ID</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="email" 
+                                placeholder="Enter Email ID" 
+                                formControlName="email"
+                                minlength="0" 
+                                maxlength="25">
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item>
+                            <nz-form-label nzRequired>Password</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input type="text" 
+                                placeholder="Enter Password " 
+                                formControlName="password"
+                                minlength="0"
+                                maxlength="25">
+                            </nz-form-control>
+                        </nz-form-item>
+                        
+
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-button-group>
+                                    <button nz-button nzType="primary" (click)="onLogin()">Add </button>
+                                </nz-button-group>
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-input-group>
+                            
+                        </nz-input-group>
+
+                        
+                       
+
+
+                    </div>
+                </nz-collapse-panel>
+            </nz-collapse>
+        </form>
+    </div>
+
+</div>

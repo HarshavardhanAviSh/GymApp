@@ -1,0 +1,331 @@
+
+
+<form [formGroup]="custInformation" >
+<nz-collapse>
+  <nz-collapse-panel nzHeader="Gym Customer Details">
+      <div nz-row [nzGutter]="{xs:8,sm:16,md:24,lg:32}" >
+          
+          <div nz-col [nzSpan]="6">
+              <nz-form-item>
+                  <nz-form-label nzRequired>Firstname</nz-form-label>
+                  <nz-form-control nzErrorTip="This is required field!">
+                      <input id="fname" type="text" placeholder="Firstname" nz-input formControlName="fname">
+                      <ng-template #fnameErrorTip>
+                        <ng-container>
+
+                        </ng-container>
+                      </ng-template>
+                  </nz-form-control>
+              </nz-form-item>
+          </div>
+
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Lastname</nz-form-label>
+                <nz-form-control [nzErrorTip]="lnameErrorTip">
+                    <input type="text" placeholder="Lastname" nz-input formControlName="lname">
+                    <ng-template #lnameErrorTip let-control>
+                      <ng-container *ngIf="control.hasError('required')"> 
+                        Cannot be Empty!
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('pattern')"> 
+                        Must contain alphabets Only!
+                      </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+          
+
+          <div nz-col [nzSpan]="6">
+              <nz-form-item>
+                  <nz-form-label>Unique ID</nz-form-label>
+                  <nz-form-control>
+                      <input type="text" placeholder="Register ID" nz-input formControlName="uid">
+                  </nz-form-control>
+              </nz-form-item>
+          </div>
+
+          <div nz-col [nzSpan]="6">
+              <nz-form-item>
+                  <nz-form-label>Select Gender</nz-form-label>
+                  <nz-form-control >
+                      <nz-select nzAllowClear nzLoading nzPlaceHolder="Select Gender" formControlName="gender">
+                          <nz-option nzValue="female" nzLabel="Female"></nz-option>
+                          <nz-option nzValue="male" nzLabel="Male"></nz-option>
+                          <nz-option nzValue="other" nzLabel="Other"></nz-option>
+                          
+                      </nz-select>
+                  </nz-form-control>
+              </nz-form-item>
+          </div>
+
+          <div nz-col [nzSpan]="6">
+              <nz-form-item>
+                <nz-form-label>Date Of Birth</nz-form-label>
+                <nz-form-control nzErrorTip="Please Select Your Gender!">
+                    
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+
+            <div nz-col [nzSpan]="6">
+              <nz-form-item>
+                  <nz-form-label nzRequired>Email</nz-form-label>
+                  <nz-form-control [nzErrorTip]="emailErrorTip">
+                      <input type="email" 
+                      placeholder="Enter Email"
+                      nz-input
+                      formControlName="email"
+                      >
+                      <ng-template #emailErrorTip let-control>
+                        <ng-container *ngIf="control.hasError('email')">
+                          The Email is not valid
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('required')">
+                          This field is required !
+                        </ng-container>
+
+                      </ng-template>
+                  </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div nz-col [nzSpan]="6">
+              <nz-form-item>
+                <nz-form-label nzRequired>Mobile No</nz-form-label>
+                <nz-form-control [nzErrorTip]="mobileErrorTip">
+                    <input type="mobileno" 
+                    placeholder="Mobile No"
+                    nz-input
+                    formControlName="mobileno"
+                    maxlength=10
+                    >
+                    <ng-template #mobileErrorTip let-control>
+                      <ng-container *ngIf= "control.hasError('required')">
+                        Mobile Number is Mandatory!
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                        Must contain Digits! 
+                      </ng-container>
+                      
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+            </div>
+          </div>
+        </nz-collapse-panel>
+      </nz-collapse>
+
+    <nz-collapse >
+      <nz-collapse-panel nzHeader="Address Information" nzActive="false">
+        <div nz-row [nzGutter]="{xs:8,sm:16,md:24,lg:32}">
+          
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-label nzRequired>Address Line 1</nz-form-label>
+              <nz-form-control [nzErrorTip]="address1ErrorTip">
+                <input type="text" 
+                placeholder="Address Line 1"
+                formControlName="address1" 
+                nz-input
+                maxlength=200
+                >
+                <ng-template #address1ErrorTip>
+                  <ng-container>
+                    Address cannot be empty!
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+    
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-label>Address Line 2</nz-form-label>
+              <nz-form-control>                   <!--//Autofill if Permanent -->
+                <input type="text" 
+                placeholder="Address Line 2"
+                formControlName="address2" 
+                nz-input>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+    
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-label nzRequired>Nationality</nz-form-label>
+              <nz-form-control [nzErrorTip]="nationErrorTip">
+                <input type="text" 
+                placeholder="Nationality"
+                formControlName="nationality" 
+                nz-input>
+                <ng-template #nationErrorTip let-control>
+                  <ng-container *ngIf="control.hasError('pattern')">
+                    Invalid characters!
+                  </ng-container>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Cannot be Empty!
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+    
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-label>Landmark</nz-form-label>
+              <nz-form-control>
+                <input type="text" 
+                placeholder="Landmark"
+                formControlName="landmark" 
+                nz-input>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+    
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-label nzRequired>City</nz-form-label>
+              <nz-form-control [nzErrorTip]="cityErrTip">
+                <input type="text" 
+                placeholder="City"
+                formControlName="city" 
+                nz-input>
+                <ng-template #cityErrTip let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Cannot be Empty!
+                  </ng-container>
+                  <ng-container *ngIf="control.hasError('pattern')">
+                    City must contain Alphabets Only!
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+    
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-label nzRequired>State</nz-form-label>
+              <nz-form-control [nzErrorTip]="stateErrTip" >
+                <input type="text" 
+                placeholder="State"
+                formControlName="state" 
+                nz-input>
+
+                <ng-template #stateErrTip let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Cannot be Empty!
+                  </ng-container>
+                  <ng-container *ngIf="control.hasError('pattern')">
+                    State must contain Alphabets Only!
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+    
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-label nzRequired>Pincode </nz-form-label>
+              <nz-form-control [nzErrorTip]="pinErrTip" >
+                <input type="text" 
+                placeholder="pincode"
+                formControlName="pincode" 
+                nz-input
+                minlength="6"
+                maxlength="6"
+                >
+                <ng-template #pinErrTip let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Cannot be Empty!
+                  </ng-container>
+                  <ng-container *ngIf="control.hasError('pattern')">
+                    Pincode Contains digits Only!
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+    
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-label>Location</nz-form-label>
+              <nz-form-control>
+                <input type="text" 
+                placeholder="Location"
+                formControlName="location" 
+                nz-input>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+    
+        </div>
+      </nz-collapse-panel>
+  </nz-collapse>
+</form>
+
+
+ <nz-row style="justify-content: center; margin-top: 10px">
+  <nz-col >
+      <button (click)="reset()">Reset</button>
+      <button (click)="submit()">Submit</button>
+  </nz-col>
+ </nz-row>
+
+
+
+ <div>
+    <h1>Customer Entries</h1> 
+   <table>
+     <thead>
+       <tr>
+         <td>Sr No</td>
+         <td>Firstname</td>
+         <td>Lastname</td>
+         <td>UID</td>
+         <td>Gender</td>
+         <td>Email</td>
+         <td>Mobile No</td>
+         <td>DOB</td>
+         <td>City</td>
+         <td>State</td>
+         <td>Pincode</td>
+         <td>Nationality</td>
+
+        </tr>
+      </thead>
+      
+      <!-- <tbody>
+        <tr *ngFor="let cust of custs">
+          <td>{{cust }}</td>
+        </tr>
+      </tbody> -->
+
+      <!-- <tbody>
+        <tr >
+          <td>{{srno}}</td>
+          <td>{{fname }}</td>
+          <td>{{lname}}</td>
+          <td>{{UID}}</td>
+          <td>{{Gender}}</td>
+          <td>{{Email}}</td>
+          <td>{{MobileNo}}</td>
+          <td>{{DOB}}</td>
+          <td>{{City}}</td>
+          <td>{{State}}</td>
+          <td>{{Pincode}}</td>
+          <td>{{Nationality}}</td>
+        </tr>
+      </tbody> -->
+
+      <tbody>
+        <tr >
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+    
+    

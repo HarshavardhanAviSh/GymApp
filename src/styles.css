@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* table{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    color: blueviolet;
+    margin-top: 4rem;
+}
+
+table td, table th {
+    border : 2px solid blueviolet;
+    padding: 10px;
+    min-height: 150px;
+} */
