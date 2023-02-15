@@ -16,6 +16,8 @@ export class GymAdminAuthComponent {
     private adminservice:AdminService
     ) {}
 
+    authErr : string | undefined = ''
+
   adminSignupForm!: any | FormGroup ;
 
   adminLoginForm!: any | FormGroup ;
@@ -46,6 +48,18 @@ export class GymAdminAuthComponent {
 
   onAdminLogin(data:adminLogin) {
     this.adminservice.adminLogin(data);
+
+
+
+
+
+    
+    this.adminservice.isLoginError.subscribe((isErr) => {
+      if(isErr) {
+        this.authErr = 'Incorrect Username or Password '
+        setTimeout(() => {this.authErr = undefined},4000)
+      }
+    })
   }
 
 }

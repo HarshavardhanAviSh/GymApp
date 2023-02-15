@@ -4,20 +4,21 @@ import { GymAdminAuthComponent } from './authorization/gym-admin-auth/gym-admin-
 import { GymCustomerAuthComponent } from './authorization/gym-customer-auth/gym-customer-auth.component';
 import { PracticeComponent } from './authorization/practice/practice.component';
 import { SignupComponent } from './authorization/signup/signup.component';
+import { GymAdminPageComponent } from './pages/gym-admin-page/gym-admin-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   { path: 'welcome', loadChildren: () => import('./pages/Home/welcome.module').then(m => m.WelcomeModule) },
-  
   
   { path: 'admin-auth',component:GymAdminAuthComponent},
   { path: 'gym-customer-auth',component:GymCustomerAuthComponent},
   
   { path: 'practice',component:PracticeComponent},
 
+  { path: 'admin-page',component:GymAdminPageComponent}
   
-
-
+  
+  
 ];
 
 @NgModule({

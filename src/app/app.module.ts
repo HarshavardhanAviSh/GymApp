@@ -33,6 +33,7 @@ import { GymCustomerAuthComponent } from './authorization/gym-customer-auth/gym-
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
 import { GymAdminAuthComponent } from './authorization/gym-admin-auth/gym-admin-auth.component';
+import { GymAdminPageComponent } from './pages/gym-admin-page/gym-admin-page.component';
 
 registerLocaleData(hi);
 
@@ -43,7 +44,8 @@ registerLocaleData(hi);
     
     PracticeComponent,
     GymCustomerAuthComponent,
-    GymAdminAuthComponent
+    GymAdminAuthComponent,
+    GymAdminPageComponent
   ],
   imports: [
     BrowserModule,

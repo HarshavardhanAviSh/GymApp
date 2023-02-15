@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { adminLogin } from '../models/admin-login.model';
 import { adminSignup } from '../models/admin-signup.model';
 
@@ -14,6 +15,8 @@ export class AdminService {
     private route:Router
     ) { }
 
+    isLoggedIn = new BehaviorSubject<boolean>(false);
+    isLoginError = new EventEmitter<boolean>(false);
 
   adminSignup(data:adminSignup) {
     this.http.post('http://localhost:3000/super-admin-signup/',data,
@@ -21,7 +24,9 @@ export class AdminService {
       console.warn(result);
       console.warn('Signup Successful!');
       localStorage.setItem('super-admin',JSON.stringify(result.body));
-      
+      this.isLoggedIn.next(true);
+      this.route.navigate(['admin-page']);
+
     })
   }
 
@@ -30,11 +35,12 @@ export class AdminService {
     {observe:'response'}).subscribe((result:any) => {
       if(result && result.body && result.body.length) {
         console.warn('Login Success!');
+        this.isLoggedIn.next(true);
         localStorage.setItem('super-admin',JSON.stringify(result.body))
-        
+        this.route.navigate(['admin-page'])
       } else {
         console.warn('Login Failed!');
-        
+        this.isLoginError.emit(true);
       }
     })
   }
