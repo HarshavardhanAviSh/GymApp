@@ -23,7 +23,6 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { SuperAdminComponent } from './dashboards/super-admin/super-admin.component';
 import { SignupComponent } from './authorization/signup/signup.component';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -33,15 +32,18 @@ import { GymCustomerAuthComponent } from './authorization/gym-customer-auth/gym-
 
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
+import { GymAdminAuthComponent } from './authorization/gym-admin-auth/gym-admin-auth.component';
+
 registerLocaleData(hi);
 
 @NgModule({
   declarations: [
     AppComponent,
-    SuperAdminComponent,
     SignupComponent,
+    
     PracticeComponent,
-    GymCustomerAuthComponent
+    GymCustomerAuthComponent,
+    GymAdminAuthComponent
   ],
   imports: [
     BrowserModule,

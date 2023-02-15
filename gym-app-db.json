@@ -1,0 +1,66 @@
+{
+  "gym-customer-list": [
+    {
+      "fname": "Ashmith",
+      "lname": "Thakur",
+      "uid": "09",
+      "mobileno": "9008080090",
+      "email": "ashmith@gmail.com",
+      "dob": null,
+      "gender": "male",
+      "address1": "Dwarka Road",
+      "address2": "Wagle Estate",
+      "nationality": "Indian",
+      "landmark": "Supremus",
+      "city": "Thane",
+      "state": "Maharashtra",
+      "pincode": "400701",
+      "location": "Yeur",
+      "id": 1
+    }
+  ],
+  "super-admin-signup": [
+    {
+      "email": "shubhra@gmail.com",
+      "password": "123",
+      "checkPassword": "123",
+      "nickname": "shubh",
+      "phoneNumberPrefix": "+86",
+      "phoneNumber": "8009090080",
+      "website": "123@gmail.com",
+      "captcha": "123",
+      "agree": false,
+      "id": 1
+    },
+    {
+      "firstName": "Karandeep",
+      "middleName": "K ",
+      "lastName": "Saluja",
+      "contactNo": "9897989790",
+      "email": "kd@gmail.com",
+      "password": "karan",
+      "confpass": "karan",
+      "id": 2
+    },
+    {
+      "firstName": "1",
+      "middleName": "1",
+      "lastName": "1",
+      "contactNo": "1",
+      "email": "1",
+      "password": "1",
+      "confpass": "1",
+      "id": 3
+    },
+    {
+      "firstName": "11",
+      "middleName": "11",
+      "lastName": "11",
+      "contactNo": "11",
+      "email": "11",
+      "password": "11",
+      "confpass": "11",
+      "id": 4
+    }
+  ]
+}

@@ -14,7 +14,9 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 export class GymCustomerAuthComponent {
 
   
-  constructor(private fb: FormBuilder) { }
+  //   
+
+  constructor(private fb: FormBuilder) {}
 
 
   custInformation !: FormGroup;
@@ -77,18 +79,13 @@ export class GymCustomerAuthComponent {
 
 
   submit() {
-    // console.warn(this.custInformation.value);
-
-    // console.warn(this.custInformation.get('fname'));
-
-    // let fname:any = document.getElementById('fname')?.innerHTML; 
     
     let data = this.custInformation.value;
-    
+    console.warn(data);
+
     console.warn(data);
     
-    
-    
+
   }
 
   reset() {

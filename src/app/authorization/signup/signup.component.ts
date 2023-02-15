@@ -8,8 +8,9 @@ import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-
-  // constructor(private fb:FormBuilder) {}
+  
+  constructor(private fb: UntypedFormBuilder) {}
+  
 
   validateForm!: UntypedFormGroup;
   captchaTooltipIcon: NzFormTooltipIcon = {
@@ -17,9 +18,11 @@ export class SignupComponent {
     theme: 'twotone'
   };
 
-  submitForm(): void {
+  submitForm(data:any): void {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
+
+
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
@@ -48,7 +51,6 @@ export class SignupComponent {
     e.preventDefault();
   }
 
-  constructor(private fb: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({

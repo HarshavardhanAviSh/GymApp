@@ -1,7 +1,7 @@
 
 <nz-collapse>
-    <nz-collapse-panel nzHeader="Form">
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-collapse-panel nzHeader="Super Admin Signup">
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
     <nz-form-item>
       <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
       <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
@@ -65,12 +65,14 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
-    <nz-form-item>
+
+    <!-- <nz-form-item>
       <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="website" nzRequired>Website</nz-form-label>
       <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input website!">
         <input nz-input id="website" formControlName="website" placeholder="website" />
       </nz-form-control>
-    </nz-form-item>
+    </nz-form-item> -->
+    
     <nz-form-item>
       <nz-form-label
         [nzSm]="6"

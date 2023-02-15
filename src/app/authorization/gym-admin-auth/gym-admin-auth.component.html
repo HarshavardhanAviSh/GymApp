@@ -1,8 +1,8 @@
 <div class="container">
     <div >
-        <form [formGroup]="adminForm">
+        <form [formGroup]="adminSignupForm" (ngSubmit)="onAdminSignup(adminSignupForm.value)">
             <nz-collapse >
-                <nz-collapse-panel nzHeader="Super Admin Registration" nzActive="true">
+                <nz-collapse-panel nzHeader="Super Admin Registration" nzActive="false">
                     <h1>Super Admin Registration Page</h1>
                     <div class="inner-box form-group">
                         <nz-form-item>
@@ -20,6 +20,9 @@
                                     minlength="0" maxlength="25">
                             </nz-form-control>
                         </nz-form-item>
+
+
+                        
 
                         <nz-form-item>
                             <nz-form-label nzRequired>Lastname</nz-form-label>
@@ -54,7 +57,7 @@
                         </nz-form-item>
 
                         <nz-form-item>
-                            <nz-form-label nzRequired>Create Password</nz-form-label>
+                            <nz-form-label nzRequired>Confirm Password</nz-form-label>
                             <nz-form-control>
                                 <input nz-input type="password" placeholder="Confirm Password"
                                     formControlName="confpass" minlength="8" maxlength="25">
@@ -64,7 +67,7 @@
                         <nz-form-item>
                             <nz-form-control>
                                 <nz-button-group>
-                                    <button nz-button nzType="primary" (click)="onSignup()">Add </button>
+                                    <button nz-button nzType="primary" >Signup</button>
                                 </nz-button-group>
                             </nz-form-control>
                         </nz-form-item>
@@ -75,9 +78,9 @@
     </div>
 
     <div>
-        <form >
+        <form [formGroup]="adminLoginForm" (ngSubmit)="onAdminLogin(adminLoginForm.value)">
             <nz-collapse>
-                <nz-collapse-panel nzHeader="Super Admin Login" nzActive="true">
+                <nz-collapse-panel nzHeader="Super Admin Login" nzActive="false">
                     <div class="inner-box form-control">
 
                         <nz-form-item>
@@ -106,7 +109,7 @@
                         <nz-form-item>
                             <nz-form-control>
                                 <nz-button-group>
-                                    <button nz-button nzType="primary" (click)="onLogin()">Add </button>
+                                    <button nz-button nzType="primary" >Login </button>
                                 </nz-button-group>
                             </nz-form-control>
                         </nz-form-item>
@@ -114,11 +117,6 @@
                         <nz-input-group>
                             
                         </nz-input-group>
-
-                        
-                       
-
-
                     </div>
                 </nz-collapse-panel>
             </nz-collapse>
