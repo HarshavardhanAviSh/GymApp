@@ -23,25 +23,20 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { SuperAdminComponent } from './dashboards/super-admin/super-admin.component';
-import { SignupComponent } from './authorization/signup/signup.component';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 
-import { PracticeComponent } from './authorization/practice/practice.component';
-import { GymCustomerAuthComponent } from './authorization/gym-customer-auth/gym-customer-auth.component';
 
 import { NzGridModule } from 'ng-zorro-antd/grid';
+
+import { AuthModule } from './modules/auth/auth.module';
+import { GymMemberModule } from './modules/gym-member/gym-member.module';
 
 registerLocaleData(hi);
 
 @NgModule({
   declarations: [
     AppComponent,
-    SuperAdminComponent,
-    SignupComponent,
-    PracticeComponent,
-    GymCustomerAuthComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +56,10 @@ registerLocaleData(hi);
     NzIconModule,
     NzDropDownModule,
     NzSelectModule,
-    NzGridModule
+    NzGridModule,
+
+    AuthModule,
+    GymMemberModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: hi_IN }
