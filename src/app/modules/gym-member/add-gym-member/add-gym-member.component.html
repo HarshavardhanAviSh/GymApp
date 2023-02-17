@@ -1,5 +1,6 @@
 <p>{{showMessage}}</p>
 <form [formGroup]="custInformation">
+    <a href="gym-admin-home">Home </a>
     <h1>Fill up Gym Membership Form</h1>
     <nz-collapse>
         <nz-collapse-panel nzHeader="Gym Member Details">
@@ -256,7 +257,7 @@
     <nz-col>
         <button  nz-button (click)="reset()">Reset</button>
         <button nz-button nzType="primary" (click)="onAddMember()">Add Member</button>
-        <button><a href="gym/listgymmember">List Members</a></button>
+        <button><a href="list-gym-member">List Members</a></button>
     </nz-col>
 </nz-row>
 

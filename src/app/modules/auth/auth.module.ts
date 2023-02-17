@@ -16,11 +16,21 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 
 import { AdminAuthComponent } from './admin-auth/admin-auth.component';
+import { Routes } from '@angular/router';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
+
+const routes : Routes = [
+  {
+    path:'admin-auth',
+    component:AdminAuthComponent
+  } 
+]
 
 @NgModule({
   declarations: [
-    AdminAuthComponent
+    AdminAuthComponent,
+    AdminHomeComponent
   ],
   imports: [
     CommonModule,

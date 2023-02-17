@@ -25,7 +25,7 @@ export class AdminService {
       console.warn('Signup Successful!');
       localStorage.setItem('super-admin',JSON.stringify(result.body));
       // this.isLoggedIn.next(true);
-      this.route.navigate(['gym-admin-page']);
+      this.route.navigate(['gym-admin-home']);
     })
   }
 
@@ -36,11 +36,12 @@ export class AdminService {
         console.warn('Login Success!');
         this.isLoggedIn.next(true);
         localStorage.setItem('super-admin',JSON.stringify(result.body))
-        this.route.navigate(['gym-admin-page'])
+        this.route.navigate(['gym-admin-home'])
       } else {
         console.warn('Login Failed!');
         this.isLoginError.emit(true);
       }
+      //
     })
   }
 }

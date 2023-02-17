@@ -1,0 +1,12 @@
+logout {
+    padding: 10rem;
+    width: fit-content;
+
+
+}
+
+button {
+    position: relative;
+    font-size: medium;
+    /* color: chocolate; */
+}

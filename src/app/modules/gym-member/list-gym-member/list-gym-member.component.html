@@ -1,0 +1,57 @@
+<h1>Listing Members ...</h1>
+
+
+<!-- <button class="backbtn" routerLink="gym/gymmemberadd" nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="arrow-left"
+    nzTheme="outline"></i></button> -->
+
+<a href="add-gym-member" nz-button nzType="primary" ><i nz-icon nzType="arrow-left" 
+    nzTheme="outline"></i></a>
+
+    <div>   
+        <h1>Gym Member List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>UID</th>
+                    <th>Gender</th>
+    
+                    <th>Email</th>
+                    <th>Contact No</th>
+                    <th>DOB</th>
+    
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Pincode</th>
+                    <th>Nationality</th>
+                    <th>Membership</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of memberProfile;let i=index; let uid=index">
+                    <td>{{i+1}}</td>
+    
+                    <td>{{member.fname}}</td>
+                    <td>{{member.lname}}</td>
+                    <td>{{uid + 1}}</td>
+                    <td>{{member.gender}}</td>
+    
+                    <td>{{member.email}}</td>
+                    <td>{{member.contactno}}</td>
+                    <td>{{member.dob}}</td>
+    
+                    <td>{{member.city}}</td>
+                    <td>{{member.state}}</td>
+    
+                    <td>{{member.pincode}}</td>
+                    <td>{{member.nationality}}</td>
+                    <td>{{member.membership}}</td>
+    
+                </tr>
+            </tbody>
+    
+        </table>
+    </div>

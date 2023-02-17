@@ -32,12 +32,6 @@ nz-form-label {
     letter-spacing: 0.8px;
     
 }
-
-nz-icon {
-  width: 2rem;
-  size: 2rem;
-}
-
   nz-select {
     width: 240px;
     cursor: progress;
@@ -137,8 +131,8 @@ p {
 }
 
 h1 {
-  font-family: 'Times New Roman', Times, serif;
-  color: darkblue;
+    font-family: 'Times New Roman', Times, serif;
+    color: darkblue;
 }
 
 

@@ -15,7 +15,7 @@
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item >
-            <a routerLink="/"> Home</a>
+            <a routerLink="/gym-admin-home"> Home</a>
           </li>
           <li nz-menu-item nzMatchRouter>
             <a >About us</a>
@@ -27,18 +27,24 @@
         <ul>
           
          
-          <li nz-menu-item nzMatchRouter>
+          <!-- <li nz-menu-item nzMatchRouter>
             <a routerLink="/admin-auth">Admin</a>
+          </li> -->
+
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="admin-auth">Admin</a>
           </li>
 
           
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/add-gym-member">Gym Member</a>
+            <a routerLink="add-gym-member">Add Member</a>
           </li>
 
-          <!-- <li nz-menu-item nzMatchRouter>
-            <a routerLink="/practice">Practice</a>
-          </li> -->
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="list-gym-member">Gym Members List</a>
+          </li>
+
+
 
 
         </ul>
