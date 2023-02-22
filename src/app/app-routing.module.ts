@@ -4,6 +4,8 @@ import { AdminAuthComponent } from './modules/auth/admin-auth/admin-auth.compone
 import { AdminHomeComponent } from './modules/auth/admin-home/admin-home.component';
 import { AddGymMemberComponent } from './modules/gym-member/add-gym-member/add-gym-member.component';
 import { ListGymMemberComponent } from './modules/gym-member/list-gym-member/list-gym-member.component';
+import { UpdateGymMemberComponent } from './modules/gym-member/update-gym-member/update-gym-member.component';
+import { PracticeComponent } from './practice/practice.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
@@ -13,8 +15,13 @@ const routes: Routes = [
   { path : 'add-gym-member',component:AddGymMemberComponent},
   { path : 'list-gym-member',component:ListGymMemberComponent},
   
+  { path : 'practice',component:PracticeComponent},
   { path : 'gym-admin-home',component:AdminHomeComponent},
-  
+
+  { path : 'update-gym-member',component:UpdateGymMemberComponent},
+  { path : 'update-gym-member/:id',component:UpdateGymMemberComponent}
+
+
 
   // {
   //   path:'admin', loadChildren:() => import ('./modules/auth/auth.module')

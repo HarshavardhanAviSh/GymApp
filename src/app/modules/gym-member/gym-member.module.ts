@@ -18,6 +18,7 @@ import { AddGymMemberComponent } from './add-gym-member/add-gym-member.component
 import { ListGymMemberComponent } from './list-gym-member/list-gym-member.component';
 import {  Routes } from '@angular/router';
 import { GymMemberHomeComponent } from './gym-member-home/gym-member-home.component';
+import { UpdateGymMemberComponent } from './update-gym-member/update-gym-member.component';
 
 
 const routes : Routes = [
@@ -28,7 +29,8 @@ const routes : Routes = [
   {
     path:'list-member',
     component:ListGymMemberComponent
-  }
+  },
+ 
 ]
 
 @NgModule({
@@ -36,6 +38,7 @@ const routes : Routes = [
     AddGymMemberComponent,
     ListGymMemberComponent,
     GymMemberHomeComponent,
+    UpdateGymMemberComponent,
   ],
   imports: [
     CommonModule,

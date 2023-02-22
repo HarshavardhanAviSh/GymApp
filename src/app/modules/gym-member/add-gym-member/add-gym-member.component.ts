@@ -25,7 +25,7 @@ export class AddGymMemberComponent {
   showMessage : string | undefined = '';
 
   
-
+    
   ngOnInit() {
     this.custInformation = this.fb.group({
 
@@ -49,35 +49,44 @@ export class AddGymMemberComponent {
       pincode: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
       location: new FormControl()
     })
-
   }
 
   submit() {
-    
     let data = this.custInformation.value;
     console.warn(data);
-
   }
 
   reset() {
     this.custInformation.reset();
   }
 
+  // onAddMember() {
+  //   const data = this.custInformation.value;
+  //   this.gymmemberservice.addGymMember(data)
+  //   .then((res) => {
+  //     this.listMember();
+  //     this.showMessage = 'Member Added Successfully!' ;
+  //     setTimeout(() => {
+  //       this.showMessage = '';
+  //     }, 3000);
+  //   })
+  // }
+
+  memberDetail : gymMemberDetail[] = [] ;
+
   onAddMember() {
-
     const data = this.custInformation.value;
-
     this.gymmemberservice.addGymMember(data)
-    .then((res) => {
-
+    .then((res:any) => {
+      this.memberDetail = res;
       this.listMember();
-      
       this.showMessage = 'Member Added Successfully!' ;
       setTimeout(() => {
         this.showMessage = '';
       }, 3000);
     })
   }
+
 
   listMember() {
     this.gymmemberservice.listGymMember()
@@ -87,5 +96,10 @@ export class AddGymMemberComponent {
     })
   }
 
+  date = null;
+  onChange(result:Date) {
+    console.warn(result);
+    
+  }
 
 }

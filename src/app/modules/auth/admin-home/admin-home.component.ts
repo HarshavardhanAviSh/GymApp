@@ -11,10 +11,6 @@ export class AdminHomeComponent {
   constructor(private route:Router) {}
 
 
-    
-
-  
-
   logout() {
     if(localStorage.getItem('super-admin')) {
       localStorage.removeItem('super-admin');

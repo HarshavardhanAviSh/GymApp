@@ -1,0 +1,32 @@
+
+
+
+<h1>Member Update Page</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Firstname</th>
+            <th>Edit Action</th>
+
+
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let member of memberProfile; let i=index;">
+            <th>{{i+1}}</th>
+            <td>{{member.fname}}</td>
+            <td>
+                <a href="javascript:void(0)" (click)="onUpdate(member.id)">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+
+    
+
+
+
+

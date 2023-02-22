@@ -126,7 +126,7 @@ table td, table th {
 p {
   padding-left: 40%;
   font-family: 'Times New Roman', Times, serif;
-  color: green;
+  color: red;
   font-size: large;
 }
 
@@ -135,14 +135,8 @@ h1 {
     color: darkblue;
 }
 
-.adjust-update-link {
-  margin-left: 10px;
-
-}
-
-table td span {
-  font-size: 20px;
-  cursor: context-menu;
+adjust-icon {
+  padding-left: 10px;
 }
    
    

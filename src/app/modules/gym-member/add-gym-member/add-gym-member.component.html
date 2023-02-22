@@ -1,5 +1,5 @@
 <p>{{showMessage}}</p>
-<form [formGroup]="custInformation">
+<form [formGroup]="custInformation" (ngSubmit)="submit()">
     <a href="gym-admin-home">Home </a>
     <h1>Fill up Gym Membership Form</h1>
     <nz-collapse>
@@ -10,7 +10,8 @@
                     <nz-form-item>
                         <nz-form-label nzRequired>Firstname</nz-form-label>
                         <nz-form-control nzErrorTip="This is required field!">
-                            <input id="fname" type="text" placeholder="Firstname" nz-input formControlName="fname">
+                            <input id="fname" type="text" placeholder="Firstname" nz-input 
+                            formControlName = "fname">
                             <ng-template #fnameErrorTip>
                                 <ng-container>
 
@@ -65,7 +66,11 @@
                     <nz-form-item>
                         <nz-form-label>Date Of Birth</nz-form-label>
                         <nz-form-control nzErrorTip="Please Select Your Gender!">
-
+                            <nz-date-picker 
+                            [(ngModel)]="date" 
+                            (ngModelChange)="onChange($event)" 
+                            formControlName="dob">
+                        </nz-date-picker>
                         </nz-form-control>
                     </nz-form-item>
                 </div>
@@ -255,11 +260,8 @@
 
 <nz-row style="justify-content: center; margin-top: 10px">
     <nz-col>
-        <button  nz-button (click)="reset()">Reset</button>
+        <button nz-button (click)="reset()">Reset</button>
         <button nz-button nzType="primary" (click)="onAddMember()">Add Member</button>
         <button><a href="list-gym-member">List Members</a></button>
     </nz-col>
 </nz-row>
-
-
-

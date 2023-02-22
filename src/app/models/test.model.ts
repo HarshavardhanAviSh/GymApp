@@ -1,4 +1,4 @@
-export interface gymMemberDetail {
+export interface test {
     fname : string,
     lname : string,
     uid : number,
@@ -17,6 +17,5 @@ export interface gymMemberDetail {
     location ?: string,
 
     membership : string
-    id:number
 
 }

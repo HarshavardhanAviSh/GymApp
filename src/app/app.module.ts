@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { hi_IN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import hi from '@angular/common/locales/hi';
@@ -32,11 +32,16 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { AuthModule } from './modules/auth/auth.module';
 import { GymMemberModule } from './modules/gym-member/gym-member.module';
 
+import { PracticeComponent } from './practice/practice.component';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+
 registerLocaleData(hi);
 
 @NgModule({
   declarations: [
     AppComponent,
+    PracticeComponent
   ],
   imports: [
     BrowserModule,
@@ -59,10 +64,13 @@ registerLocaleData(hi);
     NzGridModule,
 
     AuthModule,
-    GymMemberModule
+    GymMemberModule,
+    NzDatePickerModule,
+    NzAutocompleteModule
   ],
   providers: [
-    { provide: NZ_I18N, useValue: hi_IN }
+    // { provide: NZ_I18N, useValue: hi_IN }
+    { provide : NZ_I18N, useValue : en_US}
   ],
   bootstrap: [AppComponent]
 })
