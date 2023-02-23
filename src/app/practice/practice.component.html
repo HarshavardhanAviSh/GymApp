@@ -1,0 +1,42 @@
+<form #editMemberForm="ngForm" [formGroup]="editMemberFields" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Name" name="name" formControlName="name" ngModel>
+    <input type="text" placeholder="School Name" name="schname" formControlName="schname" ngModel>
+    <button nz-button (click)="add(editMemberForm.value)">Add</button>
+    <!-- <button nz-button (click)="edit(editMemberForm.value)">Edit</button> -->
+
+    <nz-divider nzType="vertical"></nz-divider>
+
+</form>
+
+
+<nz-table #listMemberTable [nzData]="listOfMember">
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>School Name</th>
+            <th>Action</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i=index;
+        let member of listMemberTable.data">
+            <td>{{i+1}}</td>
+            <td>{{member.name}}</td>
+            <td>{{member.schname}}</td>
+            <td>
+                <!-- <span routerLink="/update-gym-member/{{member.id}}" nz-icon nzType="edit" nzTheme="outline"></span> -->
+                <span  
+                nz-icon nzType="edit" 
+                nzTheme="outline"
+                (click)="edit(member.id)"
+                ></span>               
+
+                <nz-divider nzType="vertical"></nz-divider>
+                <button nz-button nzType="primary" nzDanger>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { RouteConfigLoadEnd } from '@angular/router';
 import { gymMemberDetail } from 'src/app/models/gym-member-detail.model';
+import { practice } from 'src/app/practice/practice.model';
 import { GymmemberService } from 'src/app/services/gymmember.service';
+import { PracticeService } from 'src/app/services/practice.service';
 
 @Component({
   selector: 'app-list-gym-member',
@@ -10,7 +12,8 @@ import { GymmemberService } from 'src/app/services/gymmember.service';
 })
 export class ListGymMemberComponent {
 
-  constructor(private gymmemberservice:GymmemberService) {
+  constructor(private gymmemberservice:GymmemberService,
+    private practiceservice:PracticeService) {
     
     this.listMembers();
   }
@@ -36,7 +39,6 @@ export class ListGymMemberComponent {
   updateMemberDetails(id:number) {
     this.gymmemberservice.updateGymMember(id)
     console.warn('ID is ',id);
-    
 
   }
 
@@ -59,4 +61,20 @@ export class ListGymMemberComponent {
       this.memberProfile = res;
     })
   }
+
+
+  practiceDetail : practice[] = [];
+  edit(id:number) {
+    // console.warn("Edit MD", this.memberDetail);
+
+    this.practiceservice.edit(id)
+      .then((detail:any) => {
+        this.practiceDetail = detail;
+        console.warn("detail",detail);
+        
+        let name = detail.name;
+        
+      })
+  }
+
 }

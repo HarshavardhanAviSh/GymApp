@@ -1,5 +1,5 @@
 <p>{{showMessage}}</p>
-<form [formGroup]="custInformation" (ngSubmit)="submit()">
+<form  #addMemberForm [formGroup]="memberDetailsForm" (ngSubmit)="submit()">
     <a href="gym-admin-home">Home </a>
     <h1>Fill up Gym Membership Form</h1>
     <nz-collapse>

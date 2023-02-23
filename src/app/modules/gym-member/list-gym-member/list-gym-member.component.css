@@ -109,15 +109,15 @@ nz-form-label {
     color: #1890ff;
    }
 
-   table{
+   nz-table{
     font-family: 'Times New Roman', Times, serif;
     text-align: left;
-    color: blueviolet;
+    color: mediumorchid;
     margin-top: 4rem;
     border-collapse: separate;
 }
 
-table td, table th {
+nz-table td, nz-table th {
     border : 2px solid blueviolet;
     padding: 10px;
     min-height: 150px;
@@ -140,7 +140,7 @@ h1 {
 
 }
 
-table td span {
+nz-table td span {
   font-size: 20px;
   cursor: context-menu;
 }

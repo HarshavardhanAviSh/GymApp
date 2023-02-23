@@ -19,6 +19,8 @@ import { ListGymMemberComponent } from './list-gym-member/list-gym-member.compon
 import {  Routes } from '@angular/router';
 import { GymMemberHomeComponent } from './gym-member-home/gym-member-home.component';
 import { UpdateGymMemberComponent } from './update-gym-member/update-gym-member.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 
 const routes : Routes = [
@@ -55,6 +57,8 @@ const routes : Routes = [
     NzSelectModule,
     NzGridModule,
     NzDatePickerModule,
+    NzTableModule,
+    NzDividerModule
   ]
 })
 export class GymMemberModule { }

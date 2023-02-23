@@ -1,32 +1,266 @@
+<!-- <p>{{showMessage}}</p> -->
+<form [formGroup]="editMemberDetailsForm" (ngSubmit)="submit()">
+    <h1>Edit Gym Membership Form</h1>
+    <nz-collapse>
+        <nz-collapse-panel nzHeader="Update Member Information">
+            <div nz-row [nzGutter]="{xs:8,sm:16,md:24,lg:32}">
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Firstname</nz-form-label>
+                        <nz-form-control nzErrorTip="This is required field!">
+                            <input id="fname" type="text" placeholder="Firstname" nz-input 
+                            formControlName = "fname">
+                            <ng-template #fnameErrorTip>
+                                <ng-container>
+
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Lastname</nz-form-label>
+                        <nz-form-control [nzErrorTip]="lnameErrorTip">
+                            <input type="text" placeholder="Lastname" nz-input formControlName="lname">
+                            <ng-template #lnameErrorTip let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Cannot be Empty!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('pattern')">
+                                    Must contain alphabets Only!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
 
 
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label>Unique ID</nz-form-label>
+                        <nz-form-control>
+                            <input type="text" placeholder="Register ID" nz-input formControlName="uid">
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
 
-<h1>Member Update Page</h1>
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Select Gender</nz-form-label>
+                        <nz-form-control>
+                            <nz-select nzAllowClear nzLoading nzPlaceHolder="Select Gender" formControlName="gender">
+                                <nz-option nzValue="female" nzLabel="Female"></nz-option>
+                                <nz-option nzValue="male" nzLabel="Male"></nz-option>
+                                <nz-option nzValue="other" nzLabel="Other"></nz-option>
+
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label>Date Of Birth</nz-form-label>
+                        <nz-form-control nzErrorTip="Please Select Your Gender!">
+                            <nz-date-picker 
+                            [(ngModel)]="date" 
+                            (ngModelChange)="onChange($event)" 
+                            formControlName="dob">
+                        </nz-date-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
 
 
-<table>
-    <thead>
-        <tr>
-            <th>Sr No</th>
-            <th>Firstname</th>
-            <th>Edit Action</th>
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Email</nz-form-label>
+                        <nz-form-control [nzErrorTip]="emailErrorTip">
+                            <input type="email" placeholder="Enter Email" nz-input formControlName="email">
+                            <ng-template #emailErrorTip let-control>
+                                <ng-container *ngIf="control.hasError('email')">
+                                    The Email is not valid
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    This field is required !
+                                </ng-container>
+
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Contact No</nz-form-label>
+                        <nz-form-control [nzErrorTip]="mobileErrorTip">
+                            <input type="text" placeholder="Contact No" nz-input formControlName="contactno"
+                                maxlength=10>
+                            <ng-template #mobileErrorTip let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Mobile Number is Mandatory!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('pattern')">
+                                    Must contain Digits!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Select Membership</nz-form-label>
+                        <nz-form-control nzErrorTip="Please Select Memebership!">
+                            <nz-select nzAllowClear nzLoading nzPlaceHolder="Select" formControlName="membership">
+                                <nz-option nzValue="daily" nzLabel="Daily"></nz-option>
+                                <nz-option nzValue="weekly " nzLabel="Weekly"></nz-option>
+                                <nz-option nzValue="monthly" nzLabel="Monthly"></nz-option>
+                                <nz-option nzValue="quarterly" nzLabel="Quarterly"></nz-option>
+                                <nz-option nzValue="annually" nzLabel="Annually"></nz-option>
+                            </nz-select>
+                            <ng-template #membershipErrTip let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+            </div>
+        </nz-collapse-panel>
+    </nz-collapse>
+
+    <nz-collapse>
+        <nz-collapse-panel nzHeader="Update Member Address Information" nzActive="false">
+            <div nz-row [nzGutter]="{xs:8,sm:16,md:24,lg:32}">
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Address Line 1</nz-form-label>
+                        <nz-form-control [nzErrorTip]="address1ErrorTip">
+                            <input type="text" placeholder="Address Line 1" formControlName="address1" nz-input
+                                maxlength=200>
+                            <ng-template #address1ErrorTip>
+                                <ng-container>
+                                    Address cannot be empty!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label>Address Line 2</nz-form-label>
+                        <nz-form-control> <!--//Autofill if Permanent -->
+                            <input type="text" placeholder="Address Line 2" formControlName="address2" nz-input>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Nationality</nz-form-label>
+                        <nz-form-control [nzErrorTip]="nationErrorTip">
+                            <input type="text" placeholder="Nationality" formControlName="nationality" nz-input>
+                            <ng-template #nationErrorTip let-control>
+                                <ng-container *ngIf="control.hasError('pattern')">
+                                    Invalid characters!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Cannot be Empty!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label>Landmark</nz-form-label>
+                        <nz-form-control>
+                            <input type="text" placeholder="Landmark" formControlName="landmark" nz-input>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>City</nz-form-label>
+                        <nz-form-control [nzErrorTip]="cityErrTip">
+                            <input type="text" placeholder="City" formControlName="city" nz-input>
+                            <ng-template #cityErrTip let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Cannot be Empty!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('pattern')">
+                                    City must contain Alphabets Only!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>State</nz-form-label>
+                        <nz-form-control [nzErrorTip]="stateErrTip">
+                            <input type="text" placeholder="State" formControlName="state" nz-input>
+
+                            <ng-template #stateErrTip let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Cannot be Empty!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('pattern')">
+                                    State must contain Alphabets Only!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label nzRequired>Pincode </nz-form-label>
+                        <nz-form-control [nzErrorTip]="pinErrTip">
+                            <input type="text" placeholder="pincode" formControlName="pincode" nz-input minlength="6"
+                                maxlength="6">
+                            <ng-template #pinErrTip let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Cannot be Empty!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('pattern')">
+                                    Pincode Contains digits Only!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzSpan]="6">
+                    <nz-form-item>
+                        <nz-form-label>Location</nz-form-label>
+                        <nz-form-control>
+                            <input type="text" placeholder="Location" formControlName="location" nz-input>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+            </div>
+        </nz-collapse-panel>
+    </nz-collapse>
+</form>
 
 
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr *ngFor="let member of memberProfile; let i=index;">
-            <th>{{i+1}}</th>
-            <td>{{member.fname}}</td>
-            <td>
-                <a href="javascript:void(0)" (click)="onUpdate(member.id)">Edit</a>
-            </td>
-        </tr>
-    </tbody>
-
-    
-
-
-
-
+<nz-row style="justify-content: center; margin-top: 10px">
+    <nz-col>
+        <button nz-button (click)="reset()">Reset</button>
+        <button nz-button nzType="primary" (click)="onEditMember()">Update Member</button>
+        <!-- <button><a href="list-gym-member">List Members</a></button> -->
+    </nz-col>
+</nz-row>

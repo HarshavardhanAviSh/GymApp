@@ -8,8 +8,10 @@
 <a href="add-gym-member" nz-button nzType="primary"><i nz-icon nzType="arrow-left" nzTheme="outline"></i></a>
 
 <div>
+
+
     <h1>Gym Member List</h1>
-    <table>
+    <nz-table #listMemberTable [nzData]="memberProfile">
         <thead>
             <tr>
                 <th>Sr No</th>
@@ -32,8 +34,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let member of memberProfile;
-                            let i=index; let uid=index">
+            <tr *ngFor="let i=index let uid=index;      
+                let member of listMemberTable.data
+            ">
+                <!-- UID Must Update  -->
                 <td>{{i+1}}</td>
 
                 <td>{{member.fname}}</td>
@@ -51,20 +55,30 @@
                 <td>{{member.pincode}}</td>
                 <td>{{member.nationality}}</td>
                 <td>{{member.membership}}</td>
-                <td>
-
-                    <!-- <td><a href="update-gym-member/{{member.id}}"><span nz-icon nzType="edit" nzTheme="outline"></span></a> -->
-
-                        <!-- <button><a href="javascript:void(0)" (click)="updateMemberDetails(member.id)">Edit</a></button> -->
+                <!-- <td>
                     <span nz-icon nzType="edit" nzTheme="outline" (click)="updateMemberDetails(member.id)"></span>
-
                     <button nz-button nzType="primary" nzDanger (click)="deleteMemberDetails(member.id)">Delete</button>
+                    <button nz-button nzType="primary" nzDanger (click)="edit(member.id)">Edit</button>
+                    <nz-divider nzType="vertical">
+                    </nz-divider>
+                </td> -->
 
+                <td>
+                    <a href="javascript:void(0)" routerLink="/update-gym-member">
+                        <span nz-icon 
+                        nzType="edit" 
+                        nzTheme="outline" 
+                        ></span>
+                    </a>
 
+                    
+                    <button nz-button nzType="primary" nzDanger (click)="deleteMemberDetails(member.id)">Delete</button>
+                    <nz-divider nzType="vertical">
+                    </nz-divider>
                 </td>
 
             </tr>
         </tbody>
 
-    </table>
+    </nz-table>
 </div>

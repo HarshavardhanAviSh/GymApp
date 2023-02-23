@@ -1,25 +1,6 @@
 {
   "gym-members": [
     {
-      "fname": "Shweta",
-      "lname": "Lohar",
-      "uid": "10",
-      "membership": "monthly",
-      "contactno": "8786575387",
-      "email": "shweta@gmail.com",
-      "dob": "2001-01-01T04:07:50.887Z",
-      "gender": "female",
-      "address1": "Kalyan",
-      "address2": "Dombivali",
-      "nationality": "Indian",
-      "landmark": "Than",
-      "city": "Kalyan",
-      "state": "Maharashtra",
-      "pincode": "400401",
-      "location": "Kalyan",
-      "id": 1
-    },
-    {
       "fname": "Ashmith",
       "lname": "Thakur",
       "uid": "20",
@@ -42,7 +23,7 @@
       "fname": "Dipak",
       "lname": "Yadav",
       "uid": "30",
-      "membership": "quarterly",
+      "membership": "Annually",
       "contactno": "9772872439",
       "email": "ashmith@gmail.com",
       "dob": "2001-02-01T04:07:50.887Z",
@@ -91,6 +72,13 @@
       "password": "kunal",
       "confpass": "kunal",
       "id": 3
+    }
+  ],
+  "practice": [
+    {
+      "name": "Chandan Sir",
+      "schname": "Internamtional School ",
+      "id": 1
     }
   ]
 }

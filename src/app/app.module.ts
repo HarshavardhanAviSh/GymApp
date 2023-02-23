@@ -36,6 +36,10 @@ import { PracticeComponent } from './practice/practice.component';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+
+
 registerLocaleData(hi);
 
 @NgModule({
@@ -66,7 +70,9 @@ registerLocaleData(hi);
     AuthModule,
     GymMemberModule,
     NzDatePickerModule,
-    NzAutocompleteModule
+    NzAutocompleteModule,
+    NzTableModule,
+    NzDividerModule
   ],
   providers: [
     // { provide: NZ_I18N, useValue: hi_IN }

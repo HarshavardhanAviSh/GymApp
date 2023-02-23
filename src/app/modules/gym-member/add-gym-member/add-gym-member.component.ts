@@ -20,14 +20,14 @@ export class AddGymMemberComponent {
       this.listMember();
     }
 
-  custInformation !: FormGroup;
+    memberDetailsForm !: FormGroup;
 
   showMessage : string | undefined = '';
 
   
     
   ngOnInit() {
-    this.custInformation = this.fb.group({
+    this.memberDetailsForm = this.fb.group({
 
       fname: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z]+$')]),
       lname: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z]+$')]),
@@ -52,12 +52,12 @@ export class AddGymMemberComponent {
   }
 
   submit() {
-    let data = this.custInformation.value;
+    let data = this.memberDetailsForm.value;
     console.warn(data);
   }
 
   reset() {
-    this.custInformation.reset();
+    this.memberDetailsForm.reset();
   }
 
   // onAddMember() {
@@ -75,7 +75,7 @@ export class AddGymMemberComponent {
   memberDetail : gymMemberDetail[] = [] ;
 
   onAddMember() {
-    const data = this.custInformation.value;
+    const data = this.memberDetailsForm.value;
     this.gymmemberservice.addGymMember(data)
     .then((res:any) => {
       this.memberDetail = res;
