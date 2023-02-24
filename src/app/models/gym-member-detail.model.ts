@@ -1,4 +1,4 @@
-export interface gymMemberDetail {
+export interface    gymMemberDetail {
     fname : string,
     lname : string,
     uid : number,
@@ -16,7 +16,7 @@ export interface gymMemberDetail {
     pincode : number,
     location ?: string,
 
-    membership : string
+    membership : string,
     id:number
 
 }

@@ -37,32 +37,22 @@ export class PracticeService {
     
   }
 
-
   list(data:any) {
-
     return new Promise((resolve,result) => {
       this.http.get('http://localhost:3000/practice ')
       .subscribe((res) => {
         resolve(result as unknown as practice)
-        
     })
-
-      
   })
 }
 
-  
-
   edit(id:number) {
-
     return new Promise((resolve,result) => {
       this.http.get(`http://localhost:3000/gym-members/${id}`,
       {observe:'response'}).subscribe((res:any) => {
         console.warn("Obs",res);
-        resolve(result as unknown as practice)
+        resolve(res.body)
     })
-
-      
     })
   }
 

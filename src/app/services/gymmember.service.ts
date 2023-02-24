@@ -16,36 +16,28 @@ export class GymmemberService {
 
   // showMessage = new EventEmitter<boolean>(false);
 
-  getMemberDetailByID(id:any) {
-    console.log(id, "ueyuerereyty") ;
+  getMemberDetailByID(id: any) {
+    console.log(id, "ueyuerereyty");
     return this.http.get<any>(`http://localhost:3000/gym-members/${id}`)
-    
   }
-
-
-
 
   getGymMemberList() {
     return new Promise((resolve, reject) => {
       this.http.get('http://localhost:3000/gym-members/')
         .subscribe((result: any) => {
           console.warn(result);
-        resolve(result as gymMemberDetail);
+          resolve(result as gymMemberDetail);
         })
     })
   }
 
   addGymMember(data: gymMemberDetail) {
-
     return new Promise((resolve, reject) => {
       this.http.post('http://localhost:3000/gym-members/', data)
-      
         .subscribe((result: any) => {
-          console.warn('data',data);
-          console.warn('result',result);
-
-          resolve(result) 
-            
+          console.warn('data', data);
+          console.warn('result', result);
+          resolve(result)
         })
     })
   }
@@ -54,27 +46,34 @@ export class GymmemberService {
     return new Promise((resolve, reject) => {
       this.http.get('http://localhost:3000/gym-members/')
         .subscribe((result: any) => {
-        
-        resolve(result as gymMemberDetail); 
+
+          resolve(result as gymMemberDetail);
         });
     })
-    
   }
-  
 
-  updateGymMember(id:any) {
-  
-    return new Promise((resolve,result) => {
-      this.http.get(`http://localhost:3000/gym-members/${id}`)
-      .subscribe((result:any) => {
-        resolve(result)
+  updateGymMember(id: any) {
+    return new Promise((resolve, result) => {
+      this.http.get(`http://localhost:3000/gym-members/${id}`,
+        { observe: 'response' }
+      ).subscribe((res: any) => {
+        resolve(res.body)
       })
     })
-  
-
   }
 
-  deleteGymMember(id:number) {
+
+  updatedGymMember(data:any) {
+    return new Promise((resolve, result) => {
+      this.http.put(`http://localhost:3000/gym-members/${data.name}`,data)
+        .subscribe((res: any) => {
+          console.warn("Updated Member:", res);
+          resolve(res.body)
+        })
+    })
+  }
+
+  deleteGymMember(id: number) {
     return this.http.delete(`http://localhost:3000/gym-members/${id}`);
   }
 
@@ -91,9 +90,5 @@ export class GymmemberService {
 
 
 
-
-
-  
-  
 
 }

@@ -19,7 +19,7 @@ const routes: Routes = [
   { path : 'gym-admin-home',component:AdminHomeComponent},
 
   { path : 'update-gym-member',component:UpdateGymMemberComponent},
-  { path : 'update-gym-member/:id',component:UpdateGymMemberComponent}
+  // { path : 'update-gym-member/:id',component:UpdateGymMemberComponent}
 
 
 

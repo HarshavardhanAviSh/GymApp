@@ -22,6 +22,7 @@ import { UpdateGymMemberComponent } from './update-gym-member/update-gym-member.
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import {StateService} from '../../services/state.service'
 
 
 const routes : Routes = [

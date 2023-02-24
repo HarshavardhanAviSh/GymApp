@@ -4,7 +4,6 @@
     <nz-collapse>
         <nz-collapse-panel nzHeader="Update Member Information">
             <div nz-row [nzGutter]="{xs:8,sm:16,md:24,lg:32}">
-
                 <div nz-col [nzSpan]="6">
                     <nz-form-item>
                         <nz-form-label nzRequired>Firstname</nz-form-label>
@@ -259,11 +258,10 @@
     </nz-collapse>
 </form>
 
-
 <nz-row style="justify-content: center; margin-top: 10px">
     <nz-col>
         <button nz-button (click)="reset()">Reset</button>
-        <button nz-button nzType="primary" (click)="onEditMember()">Update Member</button>
+        <button nz-button nzType="primary" (click)="onEditMember(editMemberDetailsForm.value)">Update Member</button>
         <!-- <button><a href="list-gym-member">List Members</a></button> -->
     </nz-col>
 </nz-row>

@@ -1,15 +1,8 @@
 <p>{{showMessage}}</p>
 <h1>Listing Members ...</h1>
-
-
-<!-- <button class="backbtn" routerLink="gym/gymmemberadd" nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="arrow-left"
-    nzTheme="outline"></i></button> -->
-
 <a href="add-gym-member" nz-button nzType="primary"><i nz-icon nzType="arrow-left" nzTheme="outline"></i></a>
 
 <div>
-
-
     <h1>Gym Member List</h1>
     <nz-table #listMemberTable [nzData]="memberProfile">
         <thead>
@@ -19,67 +12,45 @@
                 <th>Lastname</th>
                 <th>UID</th>
                 <th>Gender</th>
-
-                <!-- <th>Email</th> -->
+                <th>Email</th>
                 <th>Contact No</th>
-                <!-- <th>DOB</th> -->
-
-                <!-- <th>City</th> -->
+                <th>DOB</th>
+                <th>City</th>
                 <th>State</th>
                 <th>Pincode</th>
                 <th>Nationality</th>
                 <th>Membership</th>
                 <th >Action</th>
-
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let i=index let uid=index;      
-                let member of listMemberTable.data
-            ">
-                <!-- UID Must Update  -->
+            <tr *ngFor="let i=index;      
+                let member of listMemberTable.data">
                 <td>{{i+1}}</td>
-            
                 <td>{{member.fname}}</td>
                 <td>{{member.lname}}</td>
-                <td>{{uid + 1}}</td>
+                <td>{{member.uid}}</td>
                 <td>{{member.gender}}</td>
-
-                <!-- <td>{{member.email}}</td> -->
+                <td>{{member.email}}</td>
                 <td>{{member.contactno}}</td>
-                <!-- <td>{{member.dob}}</td> -->
-
-                <!-- <td>{{member.city}}</td> -->
+                <td>{{member.dob}}</td>
+                <td>{{member.city}}</td>
                 <td>{{member.state}}</td>
-
                 <td>{{member.pincode}}</td>
                 <td>{{member.nationality}}</td>
                 <td>{{member.membership}}</td>
-                <!-- <td>
-                    <span nz-icon nzType="edit" nzTheme="outline" (click)="updateMemberDetails(member.id)"></span>
-                    <button nz-button nzType="primary" nzDanger (click)="deleteMemberDetails(member.id)">Delete</button>
-                    <button nz-button nzType="primary" nzDanger (click)="edit(member.id)">Edit</button>
-                    <nz-divider nzType="vertical">
-                    </nz-divider>
-                </td> -->
-
                 <td>
-                    <a href="javascript:void(0)" routerLink="/update-gym-member">
+                    <a>
                         <span nz-icon 
                         nzType="edit" 
                         nzTheme="outline" 
-                        (click)="edit(member.id)"
+                        (click)="updateMemberDetails(member.id)"
                         ></span>
                     </a>
-
-                    
-                    <!-- <button nz-button nzType="primary" nzDanger (click)="deleteMemberDetails(member.id)">Delete</button> -->
-                    <button nz-button nzType="primary" nzDanger >Delete</button>
-
+                    <button nz-button nzType="primary" nzDanger (click)="deleteMemberDetails(member.id)">Delete</button>
                     <nz-divider nzType="vertical">
                     </nz-divider>
                 </td>
-
             </tr>
         </tbody>
 

@@ -4,6 +4,7 @@ import { gymMemberDetail } from 'src/app/models/gym-member-detail.model';
 import { practice } from 'src/app/models/practice.model';
 import { GymmemberService } from 'src/app/services/gymmember.service';
 import { PracticeService } from 'src/app/services/practice.service';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-list-gym-member',
@@ -15,34 +16,30 @@ export class ListGymMemberComponent {
   constructor(
     private gymmemberservice:GymmemberService,
     private practiceservice:PracticeService,
-    private route:Router
+    private route:Router,
+    private stateSvc: StateService
     ) {
     
     this.listMembers();
   }
 
   showMessage : undefined | string;
-
   memberProfile : gymMemberDetail[]=[]
-
-  memberProfileUpdate : gymMemberDetail[] = []
-
-
-
-  memberEmail = '';
+  // memberProfileUpdate : gymMemberDetail[] = []
 
   listMembers() {
     this.gymmemberservice.listGymMember()
     .then((res:any) => {
       this.memberProfile = res;
-      
     })  
   }
   
   updateMemberDetails(id:number) {
     this.gymmemberservice.updateGymMember(id)
-    console.warn('ID is ',id);
-
+      .then((user:any) => {
+        this.stateSvc.editGymMember = user;
+        this.route.navigate([`update-gym-member/`])
+      })
   }
 
   deleteMemberDetails(id:number) {
@@ -65,22 +62,6 @@ export class ListGymMemberComponent {
     })
   }
 
-
-  practiceDetail : practice[] = [];
-  edit(id:number) {
-    // console.warn("Edit MD", this.memberDetail);
-
-    this.practiceservice.edit(id)
-      .then((detail:any) => {
-        this.practiceDetail = detail;
-        console.warn("detail",detail);
-        
-        let name = detail.name;
-        console.warn("name",name);
-        
-        this.route.navigate([`update-gym-member/{{}}`])
-
-      })
-  }
-
+  // practiceDetail : practice[] = [];
+  
 }

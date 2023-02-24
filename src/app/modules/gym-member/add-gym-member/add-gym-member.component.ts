@@ -29,6 +29,7 @@ export class AddGymMemberComponent {
   ngOnInit() {
     this.memberDetailsForm = this.fb.group({
 
+      dob: new FormControl('',Validators.required),
       fname: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z]+$')]),
       lname: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z]+$')]),
       uid: new FormControl(''),
@@ -37,7 +38,6 @@ export class AddGymMemberComponent {
       contactno: new FormControl('', [Validators.required, Validators.pattern('[0-9]+$')]),
       email: new FormControl('', [Validators.email, Validators.required]),
 
-      dob: new FormControl(),
       gender: new FormControl(),
 
       address1: new FormControl('', Validators.required),

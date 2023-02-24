@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import {practice} from '../models/practice.model';
+import { practice } from '../models/practice.model';
 import { gymMemberDetail } from '../models/gym-member-detail.model';
+import { GymmemberService } from './gymmember.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +11,19 @@ export class StateService {
 
   constructor() { }
 
-  private _id !: gymMemberDetail ;
+  private _ID !: gymMemberDetail ;
+  private gymMember !: gymMemberDetail ;
 
-  public get id():gymMemberDetail {
-    return this._id
+  getEditGymMember() {
+    return this.gymMember;  
   }
 
-  public set id(i: gymMemberDetail) {
-  this._id = i;
+  public set editGymMember(g:gymMemberDetail) {
+    this.gymMember = g;
   }
 
+  
+
+
+  
 }

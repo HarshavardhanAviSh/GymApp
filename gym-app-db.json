@@ -3,7 +3,7 @@
     {
       "fname": "Ashmith",
       "lname": "Thakur",
-      "uid": "20",
+      "uid": "5",
       "membership": "quarterly",
       "contactno": "9772872439",
       "email": "ashmith@gmail.com",
@@ -22,7 +22,7 @@
     {
       "fname": "Shivani",
       "lname": "Singh",
-      "uid": "20",
+      "uid": "15",
       "membership": "quarterly",
       "contactno": "9876789098",
       "email": "shivani@gmail.com",
@@ -41,7 +41,7 @@
     {
       "fname": "Kunal",
       "lname": "Dande",
-      "uid": "20",
+      "uid": "25",
       "membership": "quarterly",
       "contactno": "9876789098",
       "email": "shivani@gmail.com",
@@ -60,7 +60,7 @@
     {
       "fname": "Harshavardhan",
       "lname": "Gaikwad",
-      "uid": "20",
+      "uid": "35",
       "membership": "quarterly",
       "contactno": "9876789098",
       "email": "shivani@gmail.com",
@@ -79,7 +79,7 @@
     {
       "fname": "Shweata",
       "lname": "Lohar",
-      "uid": "20",
+      "uid": "45",
       "membership": "quarterly",
       "contactno": "9876789098",
       "email": "shivani@gmail.com",
@@ -94,8 +94,45 @@
       "pincode": "400610",
       "location": "Thane",
       "id": 5
+    },
+    {
+      "fname": "Ketan",
+      "lname": "Patange",
+      "uid": "101",
+      "membership": "daily",
+      "contactno": "8467567457",
+      "email": "ketan@gmail.com",
+      "dob": "1995-08-04T08:15:19.121Z",
+      "gender": "male",
+      "address1": "Ulhas Nagar",
+      "address2": "Thane",
+      "nationality": "Indian",
+      "landmark": "Near Food Carnival",
+      "city": "Thane",
+      "state": "Maharashtra",
+      "pincode": "400724",
+      "location": "Thane",
+      "id": 7
+    },
+    {
+      "dob": "1980-02-01T12:21:05.724Z",
+      "fname": "Raj",
+      "lname": "Thakkar",
+      "uid": "100",
+      "membership": "daily",
+      "contactno": "8695869098",
+      "email": "raj@gmail.clom",
+      "gender": "male",
+      "address1": "1",
+      "address2": "1",
+      "nationality": "Indian",
+      "landmark": "In Front of Viviana",
+      "city": "Thane",
+      "state": "Banglore",
+      "pincode": "401403",
+      "location": "Banglore",
+      "id": 8
     }
-    
   ],
   "super-admin-signup": [
     {
@@ -143,5 +180,8 @@
       "schname": "Internamtional School ",
       "id": 2
     }
+  ],
+  "upgm": [
+    {}
   ]
 }
