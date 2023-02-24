@@ -27,6 +27,7 @@ export class UpdateGymMemberComponent  implements OnInit{
   ) { }
   
 
+
   ngOnInit(): void {
     this.editMemberDetailsForm = this.fb.group({
       fname: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z]+$')]),
@@ -57,7 +58,7 @@ export class UpdateGymMemberComponent  implements OnInit{
   
   date = null;
   onChange(result:Date) {
-    console.warn(result);
+    // console.warn(result);
     
   }
 

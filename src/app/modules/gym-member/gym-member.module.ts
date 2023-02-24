@@ -21,6 +21,7 @@ import { GymMemberHomeComponent } from './gym-member-home/gym-member-home.compon
 import { UpdateGymMemberComponent } from './update-gym-member/update-gym-member.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 
 
 const routes : Routes = [
@@ -58,7 +59,8 @@ const routes : Routes = [
     NzGridModule,
     NzDatePickerModule,
     NzTableModule,
-    NzDividerModule
+    NzDividerModule,
+    NzPopconfirmModule
   ]
 })
 export class GymMemberModule { }

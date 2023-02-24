@@ -14,7 +14,7 @@
     <nz-table #listMemberTable [nzData]="memberProfile">
         <thead>
             <tr>
-                <th>Sr No</th>
+                <th >Sr No</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>UID</th>
@@ -29,7 +29,7 @@
                 <th>Pincode</th>
                 <th>Nationality</th>
                 <th>Membership</th>
-                <th>Action</th>
+                <th >Action</th>
 
             </tr>
         </thead>
@@ -39,7 +39,7 @@
             ">
                 <!-- UID Must Update  -->
                 <td>{{i+1}}</td>
-
+            
                 <td>{{member.fname}}</td>
                 <td>{{member.lname}}</td>
                 <td>{{uid + 1}}</td>
@@ -68,11 +68,14 @@
                         <span nz-icon 
                         nzType="edit" 
                         nzTheme="outline" 
+                        (click)="edit(member.id)"
                         ></span>
                     </a>
 
                     
-                    <button nz-button nzType="primary" nzDanger (click)="deleteMemberDetails(member.id)">Delete</button>
+                    <!-- <button nz-button nzType="primary" nzDanger (click)="deleteMemberDetails(member.id)">Delete</button> -->
+                    <button nz-button nzType="primary" nzDanger >Delete</button>
+
                     <nz-divider nzType="vertical">
                     </nz-divider>
                 </td>

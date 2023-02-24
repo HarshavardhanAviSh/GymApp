@@ -1,5 +1,5 @@
 export interface practice {
-    id : number,
+    id : string,
     name : string,
     schname : string,
 }

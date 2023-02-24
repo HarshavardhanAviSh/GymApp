@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { RouteConfigLoadEnd } from '@angular/router';
+import { RouteConfigLoadEnd, Router } from '@angular/router';
 import { gymMemberDetail } from 'src/app/models/gym-member-detail.model';
-import { practice } from 'src/app/practice/practice.model';
+import { practice } from 'src/app/models/practice.model';
 import { GymmemberService } from 'src/app/services/gymmember.service';
 import { PracticeService } from 'src/app/services/practice.service';
 
@@ -12,8 +12,11 @@ import { PracticeService } from 'src/app/services/practice.service';
 })
 export class ListGymMemberComponent {
 
-  constructor(private gymmemberservice:GymmemberService,
-    private practiceservice:PracticeService) {
+  constructor(
+    private gymmemberservice:GymmemberService,
+    private practiceservice:PracticeService,
+    private route:Router
+    ) {
     
     this.listMembers();
   }
@@ -73,7 +76,10 @@ export class ListGymMemberComponent {
         console.warn("detail",detail);
         
         let name = detail.name;
+        console.warn("name",name);
         
+        this.route.navigate([`update-gym-member/{{}}`])
+
       })
   }
 

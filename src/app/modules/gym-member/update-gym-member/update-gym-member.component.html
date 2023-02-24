@@ -1,5 +1,5 @@
 <!-- <p>{{showMessage}}</p> -->
-<form [formGroup]="editMemberDetailsForm" (ngSubmit)="submit()">
+<form #updateMemberForm="ngForm" [formGroup]="editMemberDetailsForm" (ngSubmit)="submit()">
     <h1>Edit Gym Membership Form</h1>
     <nz-collapse>
         <nz-collapse-panel nzHeader="Update Member Information">
@@ -9,8 +9,11 @@
                     <nz-form-item>
                         <nz-form-label nzRequired>Firstname</nz-form-label>
                         <nz-form-control nzErrorTip="This is required field!">
-                            <input id="fname" type="text" placeholder="Firstname" nz-input 
-                            formControlName = "fname">
+                            <input id="fname" type="text" 
+                            placeholder="Firstname" 
+                            nz-input 
+                            formControlName = "fname" 
+                            >
                             <ng-template #fnameErrorTip>
                                 <ng-container>
 

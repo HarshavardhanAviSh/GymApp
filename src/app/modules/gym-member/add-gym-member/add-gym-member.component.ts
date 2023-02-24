@@ -75,6 +75,10 @@ export class AddGymMemberComponent {
   memberDetail : gymMemberDetail[] = [] ;
 
   onAddMember() {
+    if(this.memberDetailsForm.invalid){
+      alert("required all filled")
+      return;
+    }
     const data = this.memberDetailsForm.value;
     this.gymmemberservice.addGymMember(data)
     .then((res:any) => {

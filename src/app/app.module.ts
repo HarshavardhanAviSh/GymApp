@@ -39,6 +39,8 @@ import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+
 
 registerLocaleData(hi);
 
@@ -72,7 +74,8 @@ registerLocaleData(hi);
     NzDatePickerModule,
     NzAutocompleteModule,
     NzTableModule,
-    NzDividerModule
+    NzDividerModule,
+    NzPopconfirmModule
   ],
   providers: [
     // { provide: NZ_I18N, useValue: hi_IN }

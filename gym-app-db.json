@@ -17,17 +17,36 @@
       "state": "Maharashtra",
       "pincode": "400610",
       "location": "Thane",
+      "id": 1
+    },
+    {
+      "fname": "Shivani",
+      "lname": "Singh",
+      "uid": "20",
+      "membership": "quarterly",
+      "contactno": "9876789098",
+      "email": "shivani@gmail.com",
+      "dob": "2001-09-01T04:07:50.887Z",
+      "gender": "female",
+      "address1": "Thane",
+      "address2": "Thane",
+      "nationality": "Indian",
+      "landmark": "Thane",
+      "city": "Thane",
+      "state": "Maharashtra",
+      "pincode": "400610",
+      "location": "Thane",
       "id": 2
     },
     {
-      "fname": "Dipak",
-      "lname": "Yadav",
-      "uid": "30",
-      "membership": "Annually",
-      "contactno": "9772872439",
-      "email": "ashmith@gmail.com",
-      "dob": "2001-02-01T04:07:50.887Z",
-      "gender": "male",
+      "fname": "Kunal",
+      "lname": "Dande",
+      "uid": "20",
+      "membership": "quarterly",
+      "contactno": "9876789098",
+      "email": "shivani@gmail.com",
+      "dob": "2001-09-01T04:07:50.887Z",
+      "gender": "female",
       "address1": "Thane",
       "address2": "Thane",
       "nationality": "Indian",
@@ -37,7 +56,46 @@
       "pincode": "400610",
       "location": "Thane",
       "id": 3
+    },
+    {
+      "fname": "Harshavardhan",
+      "lname": "Gaikwad",
+      "uid": "20",
+      "membership": "quarterly",
+      "contactno": "9876789098",
+      "email": "shivani@gmail.com",
+      "dob": "2001-09-01T04:07:50.887Z",
+      "gender": "female",
+      "address1": "Thane",
+      "address2": "Thane",
+      "nationality": "Indian",
+      "landmark": "Thane",
+      "city": "Thane",
+      "state": "Maharashtra",
+      "pincode": "400610",
+      "location": "Thane",
+      "id": 4
+    },
+    {
+      "fname": "Shweata",
+      "lname": "Lohar",
+      "uid": "20",
+      "membership": "quarterly",
+      "contactno": "9876789098",
+      "email": "shivani@gmail.com",
+      "dob": "2001-09-01T04:07:50.887Z",
+      "gender": "female",
+      "address1": "Thane",
+      "address2": "Thane",
+      "nationality": "Indian",
+      "landmark": "Thane",
+      "city": "Thane",
+      "state": "Maharashtra",
+      "pincode": "400610",
+      "location": "Thane",
+      "id": 5
     }
+    
   ],
   "super-admin-signup": [
     {
@@ -79,6 +137,11 @@
       "name": "Chandan Sir",
       "schname": "Internamtional School ",
       "id": 1
+    },
+    {
+      "name": "Asif Sir",
+      "schname": "Internamtional School ",
+      "id": 2
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PracticeComponent } from '../practice/practice.component';
-import { practice } from '../practice/practice.model';
+import { practice } from '../models/practice.model';
 import { GymmemberService } from './gymmember.service';
 
 @Injectable({
@@ -19,15 +19,34 @@ export class PracticeService {
     this.http.post('http://localhost:3000/practice ',data)
     .subscribe((res) => {
       console.warn(res);
-    })
+    });
   
   }
   
 
-  list() {
-    this.http.get('http://localhost:3000/practice ')
-    .subscribe((res) => {
-      console.warn(res);
+  addPromise(data:any) {
+    return new Promise((resolve,result) => {
+      this.http.post('http://localhost:3000/practice ',data)
+        .subscribe((res:any) => {
+          console.warn(res);
+          resolve(result as unknown as practice)
+        })
+
+    })
+
+    
+  }
+
+
+  list(data:any) {
+
+    return new Promise((resolve,result) => {
+      this.http.get('http://localhost:3000/practice ')
+      .subscribe((res) => {
+        resolve(result as unknown as practice)
+        
+    })
+
       
   })
 }
@@ -37,7 +56,7 @@ export class PracticeService {
   edit(id:number) {
 
     return new Promise((resolve,result) => {
-      this.http.get(`http://localhost:3000/practice/${id}`,
+      this.http.get(`http://localhost:3000/gym-members/${id}`,
       {observe:'response'}).subscribe((res:any) => {
         console.warn("Obs",res);
         resolve(result as unknown as practice)
