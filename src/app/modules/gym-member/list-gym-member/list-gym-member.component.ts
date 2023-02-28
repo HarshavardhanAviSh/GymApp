@@ -34,13 +34,14 @@ export class ListGymMemberComponent {
     })  
   }
   
-  updateMemberDetails(id:number) {
-    this.gymmemberservice.updateGymMember(id)
+  editMemberDetails(id:number) {
+    console.log(id);
+    this.gymmemberservice.getPrefilledData(id)
       .then((user:any) => {
         this.stateSvc.editGymMember = user;
         this.route.navigate([`update-gym-member/`])
       })
-  }
+  } 
 
   deleteMemberDetails(id:number) {
     this.gymmemberservice.deleteGymMember(id)

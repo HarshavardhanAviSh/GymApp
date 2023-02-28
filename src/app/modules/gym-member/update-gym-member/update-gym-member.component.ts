@@ -27,7 +27,7 @@ export class UpdateGymMemberComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.meraGymMember = this.stateSvc.getEditGymMember()
+    // this.meraGymMember ;= this.stateSvc.getEditGymMember()
 
     this.myGymMember = this.stateSvc.getEditGymMember();
     console.log(this.myGymMember, 'From child componentttttt')
@@ -69,9 +69,10 @@ export class UpdateGymMemberComponent implements OnInit {
   }
 
 
-  onEditMember(data: any) {
-    this.gymmemberservice.updatedGymMember({id:this.stateSvc.editGymMember.id, ...data});
-    console.warn('Editing');
+  onUpdateMember(data: any) {
+  
+    this.gymmemberservice.updateMemberDetails({id:this.myGymMember.id,...data});
+    console.warn('Testing from UPDAtE');
     
   }
 }

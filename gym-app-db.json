@@ -1,13 +1,14 @@
 {
   "gym-members": [
     {
+      "id": 1,
       "fname": "Ashmith",
       "lname": "Thakur",
       "uid": "5",
       "membership": "quarterly",
       "contactno": "9772872439",
       "email": "ashmith@gmail.com",
-      "dob": "2001-02-01T04:07:50.887Z",
+      "dob": "2023-02-01T05:19:02.377Z",
       "gender": "male",
       "address1": "Thane",
       "address2": "Thane",
@@ -16,17 +17,17 @@
       "city": "Thane",
       "state": "Maharashtra",
       "pincode": "400610",
-      "location": "Thane",
-      "id": 1
+      "location": "Thane"
     },
     {
+      "id": 2,
       "fname": "Shivani",
       "lname": "Singh",
-      "uid": "15",
+      "uid": "500",
       "membership": "quarterly",
       "contactno": "9876789098",
       "email": "shivani@gmail.com",
-      "dob": "2001-09-01T04:07:50.887Z",
+      "dob": "2023-02-05T05:19:16.033Z",
       "gender": "female",
       "address1": "Thane",
       "address2": "Thane",
@@ -35,18 +36,18 @@
       "city": "Thane",
       "state": "Maharashtra",
       "pincode": "400610",
-      "location": "Thane",
-      "id": 2
+      "location": "Thane"
     },
     {
+      "id": 3,
       "fname": "Kunal",
       "lname": "Dande",
       "uid": "25",
       "membership": "quarterly",
       "contactno": "9876789098",
       "email": "shivani@gmail.com",
-      "dob": "2001-09-01T04:07:50.887Z",
-      "gender": "female",
+      "dob": null,
+      "gender": "male",
       "address1": "Thane",
       "address2": "Thane",
       "nationality": "Indian",
@@ -54,18 +55,18 @@
       "city": "Thane",
       "state": "Maharashtra",
       "pincode": "400610",
-      "location": "Thane",
-      "id": 3
+      "location": "Thane"
     },
     {
+      "id": 4,
       "fname": "Harshavardhan",
       "lname": "Gaikwad",
-      "uid": "35",
+      "uid": "3500",
       "membership": "quarterly",
       "contactno": "9876789098",
       "email": "shivani@gmail.com",
-      "dob": "2001-09-01T04:07:50.887Z",
-      "gender": "female",
+      "dob": null,
+      "gender": "male",
       "address1": "Thane",
       "address2": "Thane",
       "nationality": "Indian",
@@ -73,8 +74,7 @@
       "city": "Thane",
       "state": "Maharashtra",
       "pincode": "400610",
-      "location": "Thane",
-      "id": 4
+      "location": "Thane"
     },
     {
       "fname": "Shweata",

@@ -22,6 +22,10 @@ export class StateService {
     this.gymMember = g;
   }
 
+
+
+
+
   
 
 

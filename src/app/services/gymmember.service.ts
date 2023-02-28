@@ -52,7 +52,9 @@ export class GymmemberService {
     })
   }
 
-  updateGymMember(id: any) {
+
+  //Selected member will get prefilled data
+  getPrefilledData(id: any) {                   
     return new Promise((resolve, result) => {
       this.http.get(`http://localhost:3000/gym-members/${id}`,
         { observe: 'response' }
@@ -63,15 +65,18 @@ export class GymmemberService {
   }
 
 
-  updatedGymMember(data:any) {
+  updateMemberDetails(data:any) {
+    console.warn(data);
     return new Promise((resolve, result) => {
-      this.http.put(`http://localhost:3000/gym-members/${data.name}`,data)
+      
+      this.http.put(`http://localhost:3000/gym-members/${data.id}`,data)
         .subscribe((res: any) => {
           console.warn("Updated Member:", res);
           resolve(res.body)
         })
     })
   }
+
 
   deleteGymMember(id: number) {
     return this.http.delete(`http://localhost:3000/gym-members/${id}`);
