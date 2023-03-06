@@ -30,7 +30,6 @@ import { GymMemberModule } from './modules/gym-member/gym-member.module';
 
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
-
 import { PracticeComponent } from './practice/practice.component';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
@@ -44,9 +43,8 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 
 import { AuthModule } from './modules/auth/auth.module';
-import { CardsComponent } from './charts/cards/cards.component';
-
 import { GymOnboardModule } from './modules/gym-onboard/gym-onboard.module';
+import { UiModule } from './modules/ui/ui.module';
 
 registerLocaleData(hi);
 
@@ -54,7 +52,6 @@ registerLocaleData(hi);
   declarations: [
     AppComponent,
     PracticeComponent,
-    CardsComponent
   ],
   imports: [
     WelcomeModule,
@@ -86,7 +83,8 @@ registerLocaleData(hi);
     NzPopconfirmModule,
 
     NzAlertModule,
-    GymOnboardModule
+    GymOnboardModule,
+    UiModule
   ],
   providers: [
     // { provide: NZ_I18N, useValue: hi_IN }

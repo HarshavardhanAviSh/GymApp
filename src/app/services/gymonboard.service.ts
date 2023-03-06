@@ -13,29 +13,29 @@ export class GymonboardService {
 
 
   constructor(
-    private route:Router,
-    private http:HttpClient
+    private route: Router,
+    private http: HttpClient
   ) { }
 
-    
-  
-  addGymInstitute(data:gyminstitute) {
-    return new Promise((resolve,result) => {
-      this.http.post('http://localhost:3000/gyminstitutes',data)
-      .subscribe((res:any) => {
-        console.warn("res",res);
-        resolve(res)
-      })
+
+
+  addGymInstitute(data: gyminstitute) {
+    return new Promise((resolve, result) => {
+      this.http.post('http://localhost:3000/gyminstitutes', data)
+        .subscribe((res: any) => {
+          console.warn("res", res);
+          resolve(res)
+        })
     })
   }
 
   listGymInstitutes() {
     this.http.get('http://localhost:3000/gyminstitutes')
-      .subscribe((res:any) => {
-        console.warn("res",res);
+      .subscribe((res: any) => {
+        console.warn("res", res);
       })
   }
-  gymInstituteDetail : gyminstitute[] = [] 
+  gymInstituteDetail: gyminstitute[] = []
 
   // getGymInstituteDetails() {
   //   return new Promise((resolve,result) => {
@@ -50,15 +50,24 @@ export class GymonboardService {
   // }
 
   getGymInstituteDetails() {
-    return new Promise((resolve,result) => {
+    return new Promise((resolve, result) => {
       this.http.get(`http://localhost:3000/gyminstitutes`)
-        .subscribe((res:any) => {
-          console.warn("res",res);
-              this.gymInstituteDetail = res;
+        .subscribe((res: any) => {
+          console.warn("res", res);
+          this.gymInstituteDetail = res;
           resolve(res as gymMemberDetail)
-          
+
         })
     })
   }
 
+  getGymInstituteCount() {
+    return new Promise((resolve, result) => {
+      this.http.get(`http://localhost:3000/gyminstitutes`)
+        .subscribe((res: any) => {
+          console.warn("res", res);
+          resolve(res)
+        })
+    })
+  }
 }

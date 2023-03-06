@@ -39,8 +39,6 @@ const routes: Routes = [
   { path: 'gym-admin-home', component: AdminHomeComponent },
   { path: 'update-gym-member', component: UpdateGymMemberComponent },
 
-  
-
   {
     path: 'admin', loadChildren: () => import('./modules/auth/auth.module')
       .then((m) => m.AuthModule)
@@ -49,11 +47,13 @@ const routes: Routes = [
     path: 'member', loadChildren: () => import('./modules/gym-member/gym-member.module')
       .then((m) => m.GymMemberModule)
   },
-
-
   {
     path: 'onboard',loadChildren : () => import('../app/modules/gym-onboard/gym-onboard.module')
       .then((m) => m.GymOnboardModule)
+  },
+  {
+    path: 'dashboards',loadChildren : () => import('../app/dashboards/dashboards.module')
+    .then((m) => m.DashboardsModule)
   },
 
   {
@@ -72,13 +72,10 @@ const routes: Routes = [
     path:'gym-list',
     component:GymListComponent
   },
-
-  
   {
     path:'onboard-page',
     component:GymOnboardPageComponent
   },
-
   {
     path:'gym-add',
     component:GymAddComponent
@@ -95,10 +92,6 @@ const routes: Routes = [
     path:'bank-list',
     component:BankListComponent
   }
-
-  
-
-
 ];
 
 @NgModule({

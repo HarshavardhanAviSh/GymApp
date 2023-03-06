@@ -156,7 +156,7 @@
       "email": "kunal@gmail.com",
       "password": "kunal",
       "confpass": "kunal",
-      "id": 3
+      "id": 2
     },
     {
       "email": "1",
@@ -168,7 +168,7 @@
       "website": "123@gmail.com",
       "captcha": "123",
       "agree": false,
-      "id": 4
+      "id": 3
     },
     {
       "firstName": "Namrata",
@@ -179,7 +179,7 @@
       "email": "namrata@gmail.com",
       "password": "namrata",
       "confpass": "namrata",
-      "id": 5
+      "id": 4
     }
   ],
   "practice": [
@@ -237,6 +237,24 @@
       "sid": "qndfjw3",
       "mid": "qndjqn2",
       "id": 2
+    },
+    {
+      "accHolderName": "1",
+      "accType": "1",
+      "accNo": "1",
+      "IFSC": "",
+      "upi": "1",
+      "sid": "1",
+      "mid": "1",
+      "bankname": "1",
+      "branchname": "1",
+      "bankstate": "1",
+      "bankdistrict": "1",
+      "bankdicity": "",
+      "bankcentre": "1",
+      "bankaddress": "1",
+      "bankcode": "1",
+      "id": 3
     }
   ]
 }

@@ -57,4 +57,15 @@ export class AdminService {
         })
     })
   }
+
+
+  getAdminCount() {
+    return new Promise((resolve,result) => {
+      this.http.get(`http://localhost:3000/admin/`)
+        .subscribe((result:any) => {
+          console.warn("result",result);
+          resolve(result)
+        })
+    })
+  }
 }
