@@ -1,24 +1,37 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GymAdminAuthComponent } from './authorization/gym-admin-auth/gym-admin-auth.component';
-import { GymCustomerAuthComponent } from './authorization/gym-customer-auth/gym-customer-auth.component';
-import { PracticeComponent } from './authorization/practice/practice.component';
-import { SignupComponent } from './authorization/signup/signup.component';
-import { GymAdminPageComponent } from './pages/gym-admin-page/gym-admin-page.component';
+import { AdminAuthComponent } from './modules/auth/admin-auth/admin-auth.component';
+import { AdminHomeComponent } from './modules/auth/admin-home/admin-home.component';
+import { AddGymMemberComponent } from './modules/gym-member/add-gym-member/add-gym-member.component';
+import { ListGymMemberComponent } from './modules/gym-member/list-gym-member/list-gym-member.component';
+import { UpdateGymMemberComponent } from './modules/gym-member/update-gym-member/update-gym-member.component';
+import { PracticeComponent } from './practice/practice.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   { path: 'welcome', loadChildren: () => import('./pages/Home/welcome.module').then(m => m.WelcomeModule) },
   
-  { path: 'admin-auth',component:GymAdminAuthComponent},
-  { path: 'gym-customer-auth',component:GymCustomerAuthComponent},
+  { path : 'admin-auth',component:AdminAuthComponent},
+  { path : 'add-gym-member',component:AddGymMemberComponent},
+  { path : 'list-gym-member',component:ListGymMemberComponent},
   
-  { path: 'practice',component:PracticeComponent},
+  { path : 'practice',component:PracticeComponent},
+  { path : 'gym-admin-home',component:AdminHomeComponent},
 
-  { path: 'admin-page',component:GymAdminPageComponent}
-  
-  
-  
+  { path : 'update-gym-member',component:UpdateGymMemberComponent},
+  // { path : 'update-gym-member/:id',component:UpdateGymMemberComponent}
+
+
+
+  // {
+  //   path:'admin', loadChildren:() => import ('./modules/auth/auth.module')
+  //   .then((m) => m.AuthModule)
+  // },
+  // {
+  //   path:'member', loadChildren:() => import ('./modules/gym-member/gym-member.module')
+  //   .then((m) => m.GymMemberModule)
+  // }
+
 ];
 
 @NgModule({

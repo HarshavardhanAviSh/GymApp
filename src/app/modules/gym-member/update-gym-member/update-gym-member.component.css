@@ -123,7 +123,21 @@ table td, table th {
     min-height: 150px;
 }
 
+p {
+  padding-left: 40%;
+  font-family: 'Times New Roman', Times, serif;
+  color: red;
+  font-size: large;
+}
 
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: darkblue;
+}
+
+adjust-icon {
+  padding-left: 10px;
+}
    
    
   

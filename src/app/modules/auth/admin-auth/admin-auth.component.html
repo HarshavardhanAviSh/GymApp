@@ -33,6 +33,22 @@
                         </nz-form-item>
 
                         <nz-form-item>
+                            <nz-form-label style="margin-left: 1rem">
+                                Date of Birth 
+
+                                <span nz-icon nzType="calendar" nzTheme="outline" ></span>
+
+                            </nz-form-label>
+                            <nz-form-control nzErrorTip="Please select your BirthDate!">
+                              <nz-date-picker
+                                style="width: 100%; height: 3.4rem; border-radius: 0.5rem"
+                                formControlName="dob"
+                              ></nz-date-picker>
+                            </nz-form-control>
+                          </nz-form-item>
+
+
+                        <nz-form-item>
                             <nz-form-label nzRequired>Contact Number</nz-form-label>
                             <nz-form-control>
                                 <input nz-input type="tel" placeholder="Enter Contact Number"
@@ -110,6 +126,7 @@
                             <nz-form-control>
                                 <nz-button-group>
                                     <button nz-button nzType="primary" >Login </button>
+<<<<<<<< HEAD:src/app/authorization/gym-admin-auth/gym-admin-auth.component.html
                                     <p>{{authErr}}</p>
                                 </nz-button-group>
                             </nz-form-control>
@@ -118,6 +135,17 @@
                         <nz-input-group>
                             
                         </nz-input-group>
+========
+                                </nz-button-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        
+                        <p 
+                        style="color: red;
+                        font-size: medium;
+                        font-family: 'Times New Roman', Times, serif;
+                        ">{{authErr}}</p>                            
+>>>>>>>> origin:src/app/modules/auth/admin-auth/admin-auth.component.html
                     </div>
                 </nz-collapse-panel>
             </nz-collapse>

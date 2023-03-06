@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { hi_IN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
+
 import hi from '@angular/common/locales/hi';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,16 +25,12 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { SignupComponent } from './authorization/signup/signup.component';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 
-import { PracticeComponent } from './authorization/practice/practice.component';
-import { GymCustomerAuthComponent } from './authorization/gym-customer-auth/gym-customer-auth.component';
 
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
-import { GymAdminAuthComponent } from './authorization/gym-admin-auth/gym-admin-auth.component';
 import { GymAdminPageComponent } from './pages/gym-admin-page/gym-admin-page.component';
 
 registerLocaleData(hi);
@@ -40,11 +38,7 @@ registerLocaleData(hi);
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     
-    PracticeComponent,
-    GymCustomerAuthComponent,
-    GymAdminAuthComponent,
     GymAdminPageComponent
   ],
   imports: [

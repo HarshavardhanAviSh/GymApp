@@ -24,9 +24,14 @@ export class AdminService {
       console.warn(result);
       console.warn('Signup Successful!');
       localStorage.setItem('super-admin',JSON.stringify(result.body));
+<<<<<<< HEAD
       this.isLoggedIn.next(true);
       this.route.navigate(['admin-page']);
 
+=======
+      // this.isLoggedIn.next(true);
+      this.route.navigate(['gym-admin-home']);
+>>>>>>> origin
     })
   }
 
@@ -37,11 +42,19 @@ export class AdminService {
         console.warn('Login Success!');
         this.isLoggedIn.next(true);
         localStorage.setItem('super-admin',JSON.stringify(result.body))
+<<<<<<< HEAD
         this.route.navigate(['admin-page'])
+=======
+        this.route.navigate(['gym-admin-home'])
+>>>>>>> origin
       } else {
         console.warn('Login Failed!');
         this.isLoginError.emit(true);
       }
+<<<<<<< HEAD
+=======
+      //
+>>>>>>> origin
     })
   }
 }

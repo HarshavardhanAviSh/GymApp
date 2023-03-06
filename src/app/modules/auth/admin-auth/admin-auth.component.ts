@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder,FormGroup,Validators,FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { adminLogin } from 'src/app/models/admin-login.model';
 import { adminSignup } from 'src/app/models/admin-signup.model';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
-  selector: 'app-gym-admin-auth',
-  templateUrl: './gym-admin-auth.component.html',
-  styleUrls: ['./gym-admin-auth.component.css']
+  selector: 'app-admin-auth',
+  templateUrl: './admin-auth.component.html',
+  styleUrls: ['./admin-auth.component.css']
 })
-export class GymAdminAuthComponent {
+export class AdminAuthComponent {
 
   constructor(
     private fb:FormBuilder,
@@ -27,6 +27,7 @@ export class GymAdminAuthComponent {
       firstName : new FormControl(''),
       middleName : new FormControl(),
       lastName : new FormControl(),
+      dob :new FormControl(),
       contactNo : new FormControl(),
       email : new FormControl(),
       password : new FormControl(),
@@ -49,11 +50,6 @@ export class GymAdminAuthComponent {
   onAdminLogin(data:adminLogin) {
     this.adminservice.adminLogin(data);
 
-
-
-
-
-    
     this.adminservice.isLoginError.subscribe((isErr) => {
       if(isErr) {
         this.authErr = 'Incorrect Username or Password '

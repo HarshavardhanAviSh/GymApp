@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GymAdminAuthComponent } from './gym-admin-auth.component';
+import { AdminHomeComponent } from './admin-home.component';
 
-describe('GymAdminAuthComponent', () => {
-  let component: GymAdminAuthComponent;
-  let fixture: ComponentFixture<GymAdminAuthComponent>;
+describe('AdminHomeComponent', () => {
+  let component: AdminHomeComponent;
+  let fixture: ComponentFixture<AdminHomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GymAdminAuthComponent ]
+      declarations: [ AdminHomeComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GymAdminAuthComponent);
+    fixture = TestBed.createComponent(AdminHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

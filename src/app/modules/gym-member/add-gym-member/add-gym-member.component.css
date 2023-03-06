@@ -1,0 +1,147 @@
+nz-form-label {
+    width: 100%;
+    text-align: start;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    letter-spacing: 0.8px;
+    color: blueviolet;
+    
+  }
+
+  .button {
+    margin-left: 8px;
+    background-color: rgb(2, 39, 75);
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin-right: 5px;
+        
+    }
+  
+  nz-form-control {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    
+  }
+  
+  nz-form-label {
+    width: 100%;
+    text-align: start;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    letter-spacing: 0.8px;
+    
+}
+
+nz-icon {
+  width: 2rem;
+  size: 2rem;
+}
+
+  nz-select {
+    width: 240px;
+    cursor: progress;
+  }
+  nz-divider {
+    margin: 4px 0;
+  }
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 8px;
+  }
+  
+  .add-item {
+    flex: 0 0 auto;
+    padding: 8px;
+    display: block;
+  }
+  #btn2 {
+    font-size: 15px;
+    width: 250px;
+    border-radius: 20px;
+    height: auto;
+    margin-top: 4.5vh;
+  }
+  .example {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    margin: 20px 0;
+  }
+  
+  input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+  }
+   input[type=file] {
+    width:250px;
+    max-width: 100%;
+    color: #444;
+    padding:3px;
+    background: #fff;
+    border-radius:3px;
+    border: 1px solid rgb(195, 192, 192);
+    outline: none;
+  
+   }
+   .choose-file{
+    border: 1px solid black;
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    outline: none;
+  
+   }
+   .lable{
+    position: absolute;
+    left:0px;
+    bottom: 40px;
+   }
+   .preview {
+    position: absolute;
+    top: 40px;
+    color: #1890ff;
+   }
+
+   table{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    color: blueviolet;
+    margin-top: 4rem;
+    border-collapse: separate;
+}
+
+table td, table th {
+    border : 2px solid blueviolet;
+    padding: 10px;
+    min-height: 150px;
+}
+
+p {
+  padding-left: 40%;
+  font-family: 'Times New Roman', Times, serif;
+  color: green;
+  font-size: large;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: darkblue;
+}
+
+
+   
+   
+  
