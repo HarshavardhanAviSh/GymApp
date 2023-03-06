@@ -1,0 +1,192 @@
+<button class="backbtn" nz-button nzType="primary" nzShape="circle" (click)="back()">
+    <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+</button>
+
+<p>{{isMessage}}</p>
+
+
+<form #testForm="ngForm" [formGroup]="addGymForm" (ngSubmit)="onSubmit()">
+    <div nz-row [nzGutter]="{sm:8,md:16,lg:24,xl:32}">
+        
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Gym ID</nz-form-label>
+                <nz-form-control [nzErrorTip]="idErrTip">
+                    <input 
+                    type="text" 
+                    nz-input
+                    placeholder="Enter Gym ID"  
+                    formControlName="gymid"
+                    >
+                    <ng-template #idErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Mandatory
+                        </ng-container>
+                        
+                        
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired> Gym Name</nz-form-label>
+                <nz-form-control [nzErrorTip]="nameErrorTip">
+                    <input 
+                    type="text"
+                    nz-input
+                    placeholder="Enter Gym ID"  
+                    formControlName="gymname"
+                    >
+                    <ng-template #nameErrorTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Mandatory
+                        </ng-container>
+                        
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Gym Email</nz-form-label>
+                <nz-form-control [nzErrorTip]="mailErrTip">
+                    <input 
+                    type="text"
+                    nz-input
+                    placeholder="Enter Gym Email"  
+                    formControlName="gemail"
+                    >
+                    <ng-template #mailErrTip let-control>
+                        <ng-container *ngIf="control.hasError('email')">
+                            Invalid Mail ID
+                        </ng-container>
+                        
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Gym Contact No</nz-form-label>
+                <nz-form-control [nzErrorTip]="contactErrTip">
+                    <input 
+                    type="text"
+                    nz-input
+                    placeholder="Enter Gym Email"  
+                    formControlName="gemail"
+                    maxlength=10
+                    >
+                    <ng-template #contactErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Mandatory
+                        </ng-container>
+                        
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Gym Address</nz-form-label>
+                <nz-form-control [nzErrorTip] = "addsErrTip">
+                    <input 
+                    type="text"
+                    nz-input
+                    placeholder="Enter Gym Address"  
+                    formControlName="gymaddress"
+                    >
+                    <ng-template #addsErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Mandatory Field!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label >Landmark</nz-form-label>
+                <nz-form-control >
+                    <input 
+                    type="text"
+                    nz-input
+                    placeholder="Enter Nearby Landmark"  
+                    formControlName="gymlandmark"
+                    >
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>CIty</nz-form-label>
+                <nz-form-control [nzErrorTip]="cityErrTip">
+                    <input 
+                    type="text"
+                    nz-input
+                    placeholder="Enter City of Gym"  
+                    formControlName="gymcity"
+                    >
+                    <ng-template #cityErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Mandatory
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>State</nz-form-label>
+                <nz-form-control nzErrorTip="Mandatory">
+                    <input 
+                    type="text"
+                    nz-input
+                    placeholder="Enter State of Gym"  
+                    formControlName="gymstate"
+                    >
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Pincode</nz-form-label>
+                <nz-form-control [nzErrorTip]="pincodeErrTip">
+                    <input 
+                    type="text"
+                    nz-input
+                    placeholder="Enter Gym Pincode"  
+                    formControlName="gympincode"
+                    maxlength=6
+                    >
+                <ng-template #pincodeErrTip let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                        Mandatory
+                    </ng-container>
+                </ng-template>
+
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                
+                <button nz-button nzType="primary" (click)="onAdd(testForm.value)">Add Gym</button>
+                <nz-divider nzType="vertical"></nz-divider>
+                <button nz-button nzType="primary" nzDanger (click)="onReset()">Reset</button>
+
+            </nz-form-item> 
+        </div>
+        
+        <div>
+        </div>
+    </div>
+</form>

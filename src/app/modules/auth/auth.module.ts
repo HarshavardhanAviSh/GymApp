@@ -8,7 +8,6 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -16,15 +15,25 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 
 import { AdminAuthComponent } from './admin-auth/admin-auth.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+
+// import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { UiModule } from '../ui/ui.module';
+
+import { GymOnboardModule } from '../gym-onboard/gym-onboard.module';
 
 const routes : Routes = [
   {
-    path:'admin-auth',
+    path:'adminAuth',
     component:AdminAuthComponent
-  } 
+  },
+  {
+    path:'home',
+    component:AdminHomeComponent
+  }
 ]
 
 @NgModule({
@@ -38,7 +47,7 @@ const routes : Routes = [
     ReactiveFormsModule,
     NzLayoutModule,
     NzMenuModule,
-    NzCollapseModule,
+    // NzCollapseModule,
     NzInputModule,
     NzFormModule,
     NzButtonModule,
@@ -48,6 +57,13 @@ const routes : Routes = [
     NzSelectModule,
     NzGridModule,
     NzDatePickerModule,
-  ]
+    NzAlertModule,
+
+    RouterModule.forRoot(routes),
+    UiModule,
+    GymOnboardModule
+
+  ],
+  exports:[]
 })
 export class AuthModule { }

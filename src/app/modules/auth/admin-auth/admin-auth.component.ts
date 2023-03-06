@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { adminLogin } from 'src/app/models/admin-login.model';
 import { adminSignup } from 'src/app/models/admin-signup.model';
 import { AdminService } from 'src/app/services/admin.service';
@@ -12,48 +13,61 @@ import { AdminService } from 'src/app/services/admin.service';
 export class AdminAuthComponent {
 
   constructor(
-    private fb:FormBuilder,
-    private adminservice:AdminService
-    ) {}
+    private fb: FormBuilder,
+    private adminservice: AdminService,
+    private route: Router
+  ) { }
 
-    authErr : string | undefined = ''
+  authErr: string | undefined = ''
 
-  adminSignupForm!: any | FormGroup ;
+  adminSignupForm!: any | FormGroup;
 
-  adminLoginForm!: any | FormGroup ;
+  adminLoginForm!: any | FormGroup;
+
 
   ngOnInit() {
     this.adminSignupForm = this.fb.group({
-      firstName : new FormControl(''),
-      middleName : new FormControl(),
-      lastName : new FormControl(),
-      dob :new FormControl(),
-      contactNo : new FormControl(),
-      email : new FormControl(),
-      password : new FormControl(),
-      confpass : new FormControl(),
+      firstName: new FormControl(''),
+      middleName: new FormControl(),
+      lastName: new FormControl(),
+      dob: new FormControl(),
+      contactNo: new FormControl(),
+      email: new FormControl(),
+      password: new FormControl(),
+      confpass: new FormControl(),
     })
 
     this.adminLoginForm = this.fb.group({
-      email : new FormControl(),
-      password : new FormControl(),
+      email: new FormControl(),
+      password: new FormControl(),
     })
   }
 
-  onAdminSignup(data:adminSignup) {
+  onAdminSignup(data: adminSignup) {
     // console.warn(this.adminForm.value);
-    
+
     this.adminservice.adminSignup(data);
-    
+
   }
 
-  onAdminLogin(data:adminLogin) {
+  // onAdminLogin(data:adminLogin) {
+  //   this.adminservice.adminLogin(data);
+
+  //   this.adminservice.isLoginError.subscribe((isErr) => {
+  //     if(isErr) {
+  //       this.authErr = 'Incorrect Username or Password '
+  //       setTimeout(() => {this.authErr = undefined},4000)
+  //     }
+  //   })
+  // }
+
+  onAdminLogin(data: adminLogin) {
     this.adminservice.adminLogin(data);
 
     this.adminservice.isLoginError.subscribe((isErr) => {
-      if(isErr) {
+      if (isErr) {
         this.authErr = 'Incorrect Username or Password '
-        setTimeout(() => {this.authErr = undefined},4000)
+        setTimeout(() => { this.authErr = undefined }, 4000)
       }
     })
   }

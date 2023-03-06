@@ -1,0 +1,11 @@
+nz-table {
+    align-items: left;
+    border-collapse: collapse;
+    border: 1px solid orangered;
+}
+
+nz-table td,nz-table th {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    color: tomato;
+}

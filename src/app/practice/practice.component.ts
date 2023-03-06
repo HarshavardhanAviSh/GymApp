@@ -23,7 +23,7 @@ interface ItemData {
 @Component({
   selector: 'app-practice',
   templateUrl: './practice.component.html',
-  styleUrls: ['./practice.component.css']
+  styleUrls: ['./practice.component.less']
 })
 export class PracticeComponent {
 
@@ -32,6 +32,7 @@ export class PracticeComponent {
     private gymmemberservice:GymmemberService
     ) {}
 
+    isCollapsed = false;
 
     editCache : {[key:string]:{edit:boolean;data:practice}}  = {};
     

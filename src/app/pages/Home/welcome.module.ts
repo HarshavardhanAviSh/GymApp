@@ -16,9 +16,11 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
 
-
 @NgModule({
-  declarations: [WelcomeComponent],
+  declarations: [
+    WelcomeComponent,
+    
+  ],
   imports: [WelcomeRoutingModule,
     NzLayoutModule,
     NzMenuModule,

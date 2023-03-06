@@ -1,0 +1,37 @@
+<h1>Banks Listing ...</h1>
+
+
+<nz-table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Account Holder Name </th>
+            <th>Account Type</th>
+            <th>Account Number</th>
+
+            <th>IFSC</th>
+            <th>UPI</th>
+            <th>SID</th>
+            <th>MID</th>
+            
+            <th>Bank Name</th>
+            <th>Bank State</th>
+            <th> District</th>
+            <th>Bankname</th>
+            <th>City</th>
+            <th>Centre</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i = index;
+                    ">
+            <td>{{i+1}}</td>
+            <!-- <td>{{}}</td> -->
+        </tr>
+    </tbody>
+</nz-table>
+
+
+
+<!-- <button (click)="getDetails()">Press</button> -->

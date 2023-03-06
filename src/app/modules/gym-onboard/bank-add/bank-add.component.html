@@ -1,0 +1,292 @@
+<button class="backbtn" nz-button nzType="primary" nzShape="circle" (click)="back()">
+    <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+</button>
+
+<!-- <p>{{isMessage}}</p> -->
+
+
+<form #bank="ngForm" [formGroup]="bankDetails" (ngSubmit)="onSubmit()">
+    <div nz-row [nzGutter]="{sm:8,md:16,lg:24,xl:32}">
+        
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Account Holder Name</nz-form-label>
+                <nz-form-control [nzErrorTip]="nameErrTip">
+                    <input type="text" placeholder="Account Holder Name" 
+                    nz-input 
+                    formControlName="accHolderName">
+                    <ng-template #nameErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Account Type</nz-form-label>
+                <nz-form-control [nzErrorTip]="acctpErrTip">
+                    <input type="text" placeholder="Account Type" nz-input formControlName="accType">
+                    <ng-template #acctpErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Account Number</nz-form-label>
+                <nz-form-control [nzErrorTip]="accnoErrTip">
+                    <input type="text" placeholder="Account No" nz-input formControlName="accNo">
+                    <ng-template #accnoErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain Digits Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>IFSC</nz-form-label>
+                <nz-form-control [nzErrorTip]="ifscErrTip">
+                    <input type="text" placeholder="IFSC" nz-input formControlName="ifsc">
+                    <ng-template #ifscErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <!-- <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container> -->
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>UPI</nz-form-label>
+                <nz-form-control [nzErrorTip]="upiErrTip">
+                    <input type="text" placeholder="UPI" nz-input formControlName="upi">
+                    <ng-template #upiErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <!-- <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container> -->
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>SID</nz-form-label>
+                <nz-form-control [nzErrorTip]="sidErrTip">
+                    <input type="text" placeholder="Single Investor Identification" 
+                    nz-input formControlName="sid" maxlength="15">
+                    <ng-template #sidErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            ABC-1234-1234-1234
+                        </ng-container>
+                    </ng-template>
+                    
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>MID</nz-form-label>
+                <nz-form-control [nzErrorTip]="midErrTip">
+                    <input type="text" placeholder="Merchant Identification Number" 
+                    nz-input formControlName="mid" maxlength="15">
+                    <ng-template #midErrTip let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain Digits Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Bank Name</nz-form-label>
+                <nz-form-control [nzErrorTip]="nameErr">
+                    <input type="text" placeholder="Lastname" nz-input formControlName="bankname">
+                    <ng-template #nameErr let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div> 
+
+        
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Branch Name</nz-form-label>
+                <nz-form-control [nzErrorTip]="branhNamehErr">
+                    <input type="text" placeholder="Branch Name" nz-input formControlName="branchname">
+                    <ng-template #branhNamehErr let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>State</nz-form-label>
+                <nz-form-control [nzErrorTip]="stateErr">
+                    <input type="text" placeholder="State" nz-input formControlName="bankstate">
+                    <ng-template #stateErr let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>District</nz-form-label>
+                <nz-form-control [nzErrorTip]="distrErr">
+                    <input type="text" placeholder="District" nz-input formControlName="bankdistrict">
+                    <ng-template #distrErr let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>City</nz-form-label>
+                <nz-form-control [nzErrorTip]="cityErr">
+                    <input type="text" placeholder="City" nz-input formControlName="bankcity">
+                    <ng-template #cityErr let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Centre</nz-form-label>
+                <nz-form-control [nzErrorTip]="bankCentreErr">
+                    <input type="text" placeholder="Bankcentre" nz-input formControlName="bankcentre">
+                    <ng-template #bankCentreErr let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Address</nz-form-label>
+                <nz-form-control [nzErrorTip]="bankAdrsErr">
+                    <input type="text" placeholder="Address" nz-input formControlName="bankaddress">
+                    <ng-template #bankAdrsErr let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <!-- <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain alphabets Only!
+                        </ng-container> -->
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label nzRequired>Code</nz-form-label>
+                <nz-form-control [nzErrorTip]="codeErr">
+                    <input type="text" placeholder="Code" nz-input formControlName="bankcode">
+                    <ng-template #codeErr let-control>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Cannot be Empty!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            Must contain Didits Only!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                
+                <button nz-button nzType="primary" (click)="onAdd(bank.value)">Add Gym</button>
+                <nz-divider nzType="vertical"></nz-divider>
+                <button nz-button nzType="primary" nzDanger (click)="onReset()">Reset</button>
+
+            </nz-form-item> 
+        </div>
+        <div>
+        </div>
+
+   

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, resolveForwardRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { adminSignup } from '../models/admin-signup.model';
 import { gymMemberDetail } from '../models/gym-member-detail.model';
 import { test } from '../models/test.model';
 
@@ -51,7 +52,6 @@ export class GymmemberService {
         });
     })
   }
-
 
   //Selected member will get prefilled data
   getPrefilledData(id: any) {                   

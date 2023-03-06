@@ -109,7 +109,7 @@ nz-form-label {
     color: #1890ff;
    }
 
-   nz-table{
+   /* nz-table{
     font-family: 'Times New Roman', Times, serif;
     text-align: left;
     color: mediumorchid;
@@ -121,7 +121,7 @@ nz-table td, nz-table th {
     border : 2px solid blueviolet;
     padding: 10px;
     min-height: 150px;
-}
+} */
 
 p {
   padding-left: 40%;
@@ -147,3 +147,22 @@ nz-table td span {
    
    
   
+nz-table {
+  align-items: left;
+  border-collapse: collapse;
+  border: 1px solid orangered;
+}
+
+nz-table td {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  color: blue;
+  min-height: 150px;
+}
+
+nz-table th {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  color: rgb(2, 39, 75);
+  min-height: 150px;
+}

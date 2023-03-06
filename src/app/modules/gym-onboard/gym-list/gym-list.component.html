@@ -1,0 +1,79 @@
+<p>Listing Gym Institutes...</p>
+
+<button class="backbtn" nz-button nzType="primary" nzShape="circle" (click)="back()">
+    <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+</button>
+
+
+
+<nz-table #gymInstituteList [nzData]="gymInstituteDetail" >
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Gym ID</th>
+            <th>Gym Institute Name</th>
+            <th>Gym Email ID</th>
+            <th>Gym ID</th>
+            <th>Sr No</th>
+            <th>Gym ID</th>
+            <th>Contact No</th>
+            <th>Address</th>
+            <th>Landmark</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Pincode</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i = index; let gymInstitute of gymInstituteList.data ";>
+                     
+            <td>{{i+1}}</td>
+            <td>{{gymInstitute.gymid}}</td>
+            <td>{{gymInstitute.gymname}}</td>
+            <td>{{gymInstitute.gemail}}</td>
+            <td>{{gymInstitute.gcontactno}}</td>
+            <td>{{gymInstitute.gymaddress}}</td>
+            <td>{{gymInstitute.gymlandmark}}</td>
+            <td>{{gymInstitute.gymcity}}</td>
+            <td>{{gymInstitute.gymstate}}</td>
+            <td>{{gymInstitute.gympincode}}</td>
+        </tr>
+    </tbody>
+</nz-table>
+
+
+
+
+<!-- <table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Gym ID</th>
+            <th>Gym Institute Name</th>
+            <th>Gym Email ID</th>
+            <th>Gym ID</th>
+            <th>Sr No</th>
+            <th>Gym ID</th>
+            <th>Contact No</th>
+            <th>Address</th>
+            <th>Landmark</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Pincode</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i = index; let gymInstitute of gymInstituteDetail ";>
+            <td>{{i+1}}</td>
+            <td>{{gymInstitute.gymid}}</td>
+            <td>{{gymInstitute.gymname}}</td>
+            <td>{{gymInstitute.gemail}}</td>
+            <td>{{gymInstitute.gcontactno}}</td>
+            <td>{{gymInstitute.gymaddress}}</td>
+            <td>{{gymInstitute.gymlandmark}}</td>
+            <td>{{gymInstitute.gymcity}}</td>
+            <td>{{gymInstitute.gymstate}}</td>
+            <td>{{gymInstitute.gympincode}}</td>
+        </tr>
+    </tbody>
+</table> -->

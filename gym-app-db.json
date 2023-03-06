@@ -79,7 +79,7 @@
     {
       "fname": "Shweata",
       "lname": "Lohar",
-      "uid": "45",
+      "uid": "5",
       "membership": "quarterly",
       "contactno": "9876789098",
       "email": "shivani@gmail.com",
@@ -112,7 +112,7 @@
       "state": "Maharashtra",
       "pincode": "400724",
       "location": "Thane",
-      "id": 7
+      "id": 6
     },
     {
       "dob": "1980-02-01T12:21:05.724Z",
@@ -131,10 +131,10 @@
       "state": "Banglore",
       "pincode": "401403",
       "location": "Banglore",
-      "id": 8
+      "id": 7
     }
   ],
-  "super-admin-signup": [
+  "admin": [
     {
       "email": "shubhra@gmail.com",
       "password": "shubh",
@@ -148,16 +148,6 @@
       "id": 1
     },
     {
-      "firstName": "Afzal ",
-      "middleName": "A",
-      "lastName": "Khan",
-      "contactNo": "7909897987",
-      "email": "afzal@gmail.com",
-      "password": "123",
-      "confpass": "123",
-      "id": 2
-    },
-    {
       "firstName": "Kunal",
       "middleName": "K",
       "lastName": "Bhande",
@@ -167,6 +157,29 @@
       "password": "kunal",
       "confpass": "kunal",
       "id": 3
+    },
+    {
+      "email": "1",
+      "password": "1",
+      "checkPassword": "123",
+      "nickname": "shubh",
+      "phoneNumberPrefix": "+86",
+      "phoneNumber": "8009090080",
+      "website": "123@gmail.com",
+      "captcha": "123",
+      "agree": false,
+      "id": 4
+    },
+    {
+      "firstName": "Namrata",
+      "middleName": "Mahendra",
+      "lastName": "Agrawal",
+      "dob": "1999-02-24T13:42:05.865Z",
+      "contactNo": "9873495734",
+      "email": "namrata@gmail.com",
+      "password": "namrata",
+      "confpass": "namrata",
+      "id": 5
     }
   ],
   "practice": [
@@ -181,7 +194,49 @@
       "id": 2
     }
   ],
-  "upgm": [
-    {}
+  "gyminstitutes": [
+    {
+      "gymid": "001",
+      "gymname": "Fitness Club",
+      "gemail": "fitnessclub@gmail.com",
+      "gcontactno": "8000090000",
+      "gymaddress": "Vartak Nagar",
+      "gymlandmark": "Near Upvan Lake",
+      "gymcity": "Thane",
+      "gymstate": "Maharastra",
+      "gympincode": "400600",
+      "id": 1
+    },
+    {
+      "gymid": "010",
+      "gymname": "Avangers Fitness Club",
+      "gemail": "avengersclub@gmail.com",
+      "gcontactno": "9875437857",
+      "gymaddress": "Near Upvan Lake",
+      "gymlandmark": "Vartak Nagar",
+      "gymcity": "Thane",
+      "gymstate": "Maharashtra",
+      "gympincode": "400610",
+      "id": 2
+    }
+  ],
+  "banks": [
+    {
+      "accHolderName": "absnd1",
+      "accType": "ajsdkj1`2",
+      "accNo": "janhdkj21",
+      "ifsc": "nbadskjfsak31",
+      "id": 1
+    },
+    {
+      "accHolderName": "nasd1",
+      "accType": "andkjfw21",
+      "accNo": "jndfkjw3",
+      "ifsc": "jwfw3",
+      "upi": "jw2nefj3",
+      "sid": "qndfjw3",
+      "mid": "qndjqn2",
+      "id": 2
+    }
   ]
 }

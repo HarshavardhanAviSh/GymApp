@@ -1,0 +1,19 @@
+nz-table {
+    align-items: left;
+    border-collapse: collapse;
+    border: 1px solid orangered;
+  }
+  
+  nz-table td {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    color: blue;
+    min-height: 150px;
+  }
+  
+  nz-table th {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    color: rgb(2, 39, 75);
+    min-height: 150px;
+  }

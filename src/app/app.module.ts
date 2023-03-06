@@ -26,11 +26,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 
+import { GymMemberModule } from './modules/gym-member/gym-member.module';
 
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
-import { AuthModule } from './modules/auth/auth.module';
-import { GymMemberModule } from './modules/gym-member/gym-member.module';
 
 import { PracticeComponent } from './practice/practice.component';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
@@ -40,16 +39,26 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { WelcomeModule } from './pages/Home/welcome.module';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 
+
+import { AuthModule } from './modules/auth/auth.module';
+import { CardsComponent } from './charts/cards/cards.component';
+
+import { GymOnboardModule } from './modules/gym-onboard/gym-onboard.module';
 
 registerLocaleData(hi);
 
 @NgModule({
   declarations: [
     AppComponent,
-    PracticeComponent
+    PracticeComponent,
+    CardsComponent
   ],
   imports: [
+    WelcomeModule,
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -69,18 +78,23 @@ registerLocaleData(hi);
     NzSelectModule,
     NzGridModule,
 
-    AuthModule,
     GymMemberModule,
     NzDatePickerModule,
     NzAutocompleteModule,
     NzTableModule,
     NzDividerModule,
-    NzPopconfirmModule
+    NzPopconfirmModule,
+
+    NzAlertModule,
+    GymOnboardModule
   ],
   providers: [
     // { provide: NZ_I18N, useValue: hi_IN }
     { provide : NZ_I18N, useValue : en_US}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[
+    GymOnboardModule
+  ]
 })
 export class AppModule { }

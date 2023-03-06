@@ -1,5 +1,6 @@
-<nz-layout class="app-layout">
-  
+ 
+<nz-layout class="app-layout"> -->
+    
   <nz-sider class="menu-sidebar"
             nzCollapsible
             nzWidth="256px"
@@ -16,43 +17,41 @@
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item >
-            <a routerLink="/gym-admin-home"> Home</a>
+            <a routerLink="/welcome"> Home</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
+          <!-- <li nz-menu-item nzMatchRouter>
             <a >About us</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
+          </li> -->
+          <li *ngSwitch="" nz-menu-item nzMatchRouter>
             <a routerLink="practice">Practice</a>
           </li>
 
-          
         </ul>
       </li>
       <li nz-submenu nzOpen nzTitle="Management" nzIcon="form">
         <ul>
-          
-         
-          <!-- <li nz-menu-item nzMatchRouter>
-            <a routerLink="/admin-auth">Admin</a>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="admin-auth">Admin</a>         
+          </li>
+
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="onboard/onboard-page">Gym Onboard</a>         
+          </li>
+
+
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="onboard/bank-add">Bank </a>         
+          </li>
+
+
+
+          <!-- <!-- <li nz-menu-item nzMatchRouter>
+            <a routerLink="member/member-add">Add Member</a>
           </li> -->
 
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="admin-auth">Admin</a>
+            <a routerLink="member/member-list">Member List</a>
           </li>
-
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="list-gym-member">Gym Members List</a>
-          </li>
-
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="add-gym-member">Add Member</a>
-          </li>
-
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="update-gym-member">Update Gym Members</a>
-          </li>
-
-
 
         </ul>
       </li>
@@ -76,3 +75,4 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
+

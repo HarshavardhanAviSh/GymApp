@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-admin-home',
@@ -10,11 +11,16 @@ export class AdminHomeComponent {
 
   constructor(private route:Router) {}
 
+  // isAdminLoggedIn = new BehaviorSubject<boolean>(false);
+
+
+  
+
 
   logout() {
-    if(localStorage.getItem('super-admin')) {
-      localStorage.removeItem('super-admin');
-      this.route.navigate(['welcome'])
+    if(localStorage.getItem('admin')) {
+      localStorage.removeItem('admin');
+      this.route.navigate(['welcome']);
     }
   }
 

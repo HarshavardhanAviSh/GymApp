@@ -16,25 +16,27 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { AddGymMemberComponent } from './add-gym-member/add-gym-member.component';
 import { ListGymMemberComponent } from './list-gym-member/list-gym-member.component';
-import {  Routes } from '@angular/router';
+import {  RouterModule, Routes } from '@angular/router';
 import { GymMemberHomeComponent } from './gym-member-home/gym-member-home.component';
 import { UpdateGymMemberComponent } from './update-gym-member/update-gym-member.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import {StateService} from '../../services/state.service'
+import {StateService} from '../../services/state.service';
 
+import { UiModule } from '../ui/ui.module';
 
 const routes : Routes = [
   {
-    path:'add-member',
+    path:'member-add',
     component:AddGymMemberComponent
   },
   {
-    path:'list-member',
+    path:'member-list',
     component:ListGymMemberComponent
   },
- 
+  
+  
 ]
 
 @NgModule({
@@ -61,7 +63,10 @@ const routes : Routes = [
     NzDatePickerModule,
     NzTableModule,
     NzDividerModule,
-    NzPopconfirmModule
-  ]
+    NzPopconfirmModule,
+    RouterModule.forChild(routes),
+    UiModule
+  ],
+ 
 })
 export class GymMemberModule { }
